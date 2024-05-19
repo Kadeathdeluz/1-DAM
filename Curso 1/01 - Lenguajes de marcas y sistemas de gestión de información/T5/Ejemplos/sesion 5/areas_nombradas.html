@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Areas</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; min-height: 100% } 
+        .grid {
+          
+          display: grid;
+          grid-template-areas:
+            "encab    encab    encab"
+            "blateral cont     cont"
+            "pie      pie      pie";
+          grid-template-columns: 1fr 2fr 2fr;
+          grid-template-rows: auto auto auto;
+          gap: 1em;
+        }
+        .encab{ grid-area: encab; background: lightblue;min-height: 100px; }
+        .blateral { grid-area: blateral; background: lightgreen; min-height: 700px;}
+        .cont { grid-area: cont; background: lightyellow; }
+        .pie { grid-area: pie; background: lightcoral;min-height: 50px;  }
+      </style>
+</head>
+<body>
+    <div class="grid">
+      
+        <div class="encab">Encabezado</div>
+        <div class="blateral">Barra lateral</div>
+        <div class="cont">Contenido principal</div>
+        <div class="pie">Pie de página</div>
+      </div>  
+      
+</body>
+</html>
+

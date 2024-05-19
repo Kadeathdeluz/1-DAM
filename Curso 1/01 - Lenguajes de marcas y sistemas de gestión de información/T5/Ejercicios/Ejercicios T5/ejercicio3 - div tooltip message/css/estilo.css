@@ -1,0 +1,22 @@
+.tooltip {
+    margin-top: 20px;
+    background-color: #983b98;
+    position: relative;
+    display: inline-block;
+    padding: 1em 3em;
+    color: white;
+    font-size: 1.2em;
+  }
+  
+  .tooltip::after {
+    border-bottom: 15px solid #983b98;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 1em;
+  }

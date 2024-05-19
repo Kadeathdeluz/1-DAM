@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>align-items para columnas</title>
+  <style>
+    body {
+      background-color: aquamarine;
+      font-family: sans-serif;
+    }
+    ul, li {
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      margin-top: 0;
+      background-color: #666;
+      justify-content: space-between;
+    }
+    li {
+      display: block;
+      background-color: orangered;
+      line-height: 34px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      margin: 4px 0;
+      padding: 2px 15px;
+    }
+    h1 {
+      margin: 20px 20px 4px 15px;
+      font-size: 1.3em;
+      color: darkblue;
+    }
+    .flexstart {
+      align-items: flex-start;
+    }
+    .flexend {
+      align-items: flex-end;
+    }
+    .flexcenter {
+      align-items: center;
+    }
+    .stretch {
+      align-items: stretch;
+    }
+    .stretch li {
+      height: auto;
+      line-height: 100px;
+    }
+    .baseline {
+      align-items: baseline;
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <h1>flex-start</h1>
+    <ul class="flexstart">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+  <div class="test">
+    <h1>flex-end</h1>
+    <ul class="flexend">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+  <div class="test">
+    <h1>center</h1>
+    <ul class="flexcenter">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+  <div class="test">
+    <h1>Stretch</h1>
+    <ul class="stretch">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+</body>
+</html>
+

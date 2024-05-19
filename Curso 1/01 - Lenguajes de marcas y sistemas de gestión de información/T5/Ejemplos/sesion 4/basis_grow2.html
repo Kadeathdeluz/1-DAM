@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .externo{
+            border: 4px dashed red;
+            display: flex;
+            /*flex-direction: column;*/
+            flex-wrap: wrap;
+        }
+        .interno{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1xp solid black;
+            font-size: 4em;
+            padding: .5em;
+            
+            /*Pensamiento responsivo*/
+            flex: 1 1 33%; /*calc(100%/3)*/ 
+           /*min-width: 600px;*/ /*Si queremos controlar el tamaño también podemos ponerlo así*/
+        }
+        .interno:nth-child(1){
+            background-color: blueviolet;
+        }
+        .interno:nth-child(2){
+            background-color: red;
+        }
+        .interno:nth-child(3){
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="externo">
+        <div class="interno">Area_1</div>
+        <div class="interno">Area_2</div>
+        <div class="interno">Area_3</div>
+    </div>
+</body>
+</html>

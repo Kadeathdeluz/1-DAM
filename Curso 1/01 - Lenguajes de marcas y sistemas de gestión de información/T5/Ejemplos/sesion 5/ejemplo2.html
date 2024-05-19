@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid Areas</title>
+        <style>
+            /* Estilos base para todos los dispositivos */
+            .grid {
+              min-height: 100vh; /* Ajusta la altura mínima al 100% del viewport */
+              display: grid;
+              grid-template-areas:
+                "encab    encab    encab"
+                "blateral cont     cont"
+                "pie      pie      pie";
+              grid-template-columns: 1fr 2fr 2fr;
+              grid-template-rows: auto auto auto;
+              gap: 1em;
+            }
+            .encab { grid-area: encab; background: lightblue; min-height: 100px; }
+            .blateral { grid-area: blateral; background: lightgreen; min-height: 700px; }
+            .cont { grid-area: cont; background: lightyellow; min-height: auto; }
+            .pie { grid-area: pie; background: lightcoral; min-height: 50px; }
+    
+            /* Media query para tabletas y dispositivos móviles */
+            @media (max-width: 768px) {
+              .grid {
+                grid-template-areas:
+                  "encab"
+                  "cont"
+                  "pie";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+              }
+              .blateral { display: none; } /* Oculta la barra lateral en dispositivos pequeños */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <div class="encab">Encabezado</div>
+            <div class="blateral">Barra lateral</div>
+            <div class="cont">Contenido principal</div>
+            <div class="pie">Pie de página</div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,74 @@
+/*NOTA: al declarar variables Compass no tiene problema, 
+pero al pegar todo de golpe puede fallar, 
+especialmente con las primeras instrucciones: use, dropDatabase() y createCollection("").
+También se raya a veces con los comentarios, especialmente de una línea */
+
+/* Limpia la consola */
+cls
+/* Crea la BD */
+use MDBElecciones
+/* Borra la BD */
+db.dropDatabase()
+/* Vuelve a crear la BD después de borrarla */
+use MDBElecciones
+/* Crea la colección "Partidos"*/
+db.createCollection("Partidos")
+
+/* Creo primero los votos como array para poder insertarlos en el partido correspondiente */
+
+var votos_p01 = [
+	{"id_dig":"F6E8D2C", "circunscripcion":"Impunícia", "gratificacion":500}, 
+	{"id_dig":"3A7F9B4", "circunscripcion":"Impunícia", "gratificacion":1000}, 
+	{"id_dig":"H5I4J3K", "circunscripcion":"Impunícia"}, 
+	{"id_dig":"3A7F9B4", "circunscripcion":"Impunícia"}
+]
+
+var votos_p02 = [
+	{"id_dig":"5X7W9Y4", "circunscripcion":"Impunícia"},
+	{"id_dig":"P1Q3R5S", "circunscripcion":"Ladronia"},
+	{"id_dig":"C1D2E3F", "circunscripcion":"Ladronia"},
+	{"id_dig":"G6H7I8J", "circunscripcion":"Ladronia"},
+	{"id_dig":"Y2X4Z6W", "circunscripcion":"Ladronia"},
+	{"id_dig":"Z5A4B3C", "circunscripcion":"Impunícia"},
+	{"id_dig":"J5K4L3M", "circunscripcion":"Ladronia"},
+]
+
+var votos_p04 = [
+	{"id_dig":"1A2B3C4", "circunscripcion":"Impunícia", "gratificacion":1500},
+	{"id_dig":"7G8H9I0", "circunscripcion":"Ladronia", "gratificacion":1000},
+	{"id_dig":"J1K2L3M", "circunscripcion":"Impunícia"},
+	{"id_dig":"R7S8T9U", "circunscripcion":"Ladronia", "gratificacion":1200},
+	{"id_dig":"4D5E6F7", "circunscripcion":"Ladronia"},
+	{"id_dig":"A1B2C3D", "circunscripcion":"Impunícia", "gratificacion":700},
+	{"id_dig":"N4O5P6Q", "circunscripcion":"Ladronia", "gratificacion":800},
+	{"id_dig":"V1W2X3Y", "circunscripcion":"Impunícia"}
+]
+
+var votos_p05 = [
+	{"id_dig":"Z1X4C7V", "circunscripcion":"Impunícia", "gratificacion":100},
+	{"id_dig":"O1P2Q3R", "circunscripcion":"Impunícia", "gratificacion":50},
+	{"id_dig":"S7T8U9V", "circunscripcion":"Impunícia", "gratificacion":200},
+	{"id_dig":"K0L9M8N", "circunscripcion":"Ladronia", "gratificacion":1000},
+	{"id_dig":"T4U5V6W", "circunscripcion":"Impunícia", "gratificacion":100},
+	{"id_dig":"X1Y2Z3A", "circunscripcion":"Ladronia", "gratificacion":150}
+]
+
+/* Creo los partidos con el array de votos correspondiente */
+
+var p01 = {"_id":"p01", "siglas":"ASIR", "nombre":"Alianza Social de Izquierda Radical", "votos":votos_p01}
+
+var p02 = {"_id": "p02", "siglas":"DAM", "nombre":"Democracia, Acción y Modernidad", "votos":votos_p02, "afiliados":6000}
+
+var p03 = {"_id": "p03", "siglas":"DAW", "nombre":"Diversidad, Ambiente y Wifi gratis", "afiliados":4000}
+
+var p04 = {"_id": "p04", "siglas":"PHT", "nombre":"Partido de la Honestidad y la Transparencia", "votos":votos_p04, "afiliados":12000}
+
+var p05 = {"_id": "p05", "siglas":"PRO", "nombre":"Partido del Robo Organizado", "votos":votos_p05, "afiliados":8000}
+
+/* Inserto los partidos en la colección de la base de datos */
+
+db.Partidos.insertMany([p01,p02,p03,p04,p05])
+
+/* Listo todos los campos de todos los registros ordenados por las siglas del partido */
+
+db.Partidos.find().sort({"siglas":1})

@@ -1,0 +1,1 @@
+tagSearchIndex = [{"l":"Clase Empleado","h":"class entregapro1ud4.Empleado","d":"Section","u":"entregapro1ud4/Empleado.html#clase-empleado-heading"}];updateSearchResults();

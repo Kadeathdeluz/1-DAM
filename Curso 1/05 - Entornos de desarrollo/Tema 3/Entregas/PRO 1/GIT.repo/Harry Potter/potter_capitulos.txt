@@ -1,0 +1,8 @@
+1	La piedra filosofal
+2	La cámara secreta
+3	El prisionero de Azkaban
+4	El cáliz de fuego
+5	La Orden del Fénix
+6	El misterio del príncipe
+7	Las reliquias de la Muerte: parte 1
+8	Las reliquias de la Muerte: parte 2

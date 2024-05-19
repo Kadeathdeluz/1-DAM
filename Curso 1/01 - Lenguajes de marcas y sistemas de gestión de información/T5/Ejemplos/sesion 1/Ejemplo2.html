@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores de atributo</title>
+    <style>
+        p.p1 {
+          color: red;
+        }
+     
+     
+        p.p2 {
+          color: blue;
+        }
+     
+     
+        p[class] {
+          text-transform: uppercase;
+        }
+
+        /*Elementos cuya clase contenga la letra c*/
+        p[class*="c"] {
+            text-decoration:underline;
+        }
+        /*Elementos cuya clase empiece por la letra p*/
+
+        p[class^="p"] {
+            text-decoration: overline;
+        }    
+        /* Elementos <a> cuya href que termine en ".es" */
+        [href$=".es"] {
+            font-style: italic;
+            color: red;
+        }
+*/
+        /*Más ejemplos https://developer.mozilla.org/es/docs/Web/CSS/Attribute_selectors*/
+      </style>
+     </head>
+     
+     
+     <body>
+      <p class="p1">Esto es un párrafo &lt;p&gt; de clase p1.</p>
+      <p class="p2">Esto es un párrafo &lt;p&gt; de clase p2.</p>
+      <p class="c1">Esto es un párrafo &lt;p&gt; de clase c1.</p>
+      <p class="c2">Esto es un párrafo &lt;p&gt; de clase c2.</p>     
+      <p>Esto es un párrafo &lt;p&gt; sin clase.</p>
+
+      <ul>
+         <li><a href="www.gmail.com">GMAIL</a></li>
+         <li><a href="www.google.es">GOOGLE</a></li>
+         <li><a href="www.office.es">OFFICE</a></li>
+      </ul>
+     </body>
+     </html>

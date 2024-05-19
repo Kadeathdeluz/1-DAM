@@ -1,0 +1,44 @@
+4.1. Consulta 1
+Mostrar el nombre y partido (concatenados por coma) de los senadores que hayan pedido cita para votar el día 9 de marzo de 2025, ordenados alfabéticamente por su partido. Realizar la consulta mediante:
+
+a) Forma explícita:
+
+SELECT (v.nombre, s.partido) AS "Senador" 
+FROM votante v 
+INNER JOIN senador s
+ON v.dni = s.dni
+INNER JOIN pide_c p
+ON v.dni = p.dni_votante
+WHERE p.dia = "2025-03-09"
+ORDER BY s.partido ASC;
+
+b) Forma implícita:
+
+SELECT (v.nombre, s.partido) AS "Senador" 
+FROM votante v, senador s, pide_c p
+WHERE (v.dni = s.dni)  AND (v.dni = p.dni_votante) AND (p.dia = "2025-03-09")
+ORDER BY s.partido ASC;
+
+4.2. Consulta 2
+Mostrar el nombre del centro y número de interventores asignados a ese centropara los centros con más de un interventor asignado, ordenados de mayor amenor número de interventores y por el nombre alfabético del centro. Realizar laconsulta mediante:
+a) Con GROUP BY
+b) Con subconsultas
+
+4.3. Consulta 3
+Mostrar las id_digitales que no han votado y su circunscripción, para lascircunscripciones que contengan la cadena 'Ladron' o que tengan exactamente 9letras y empiecen por I, ordenadas por circunscripción. Realizar la consultamediante:
+a) Con IN
+b) Con EXISTS
+
+4.4. Consulta 4
+Muestra el nombre y el sueldo de los interventores asignados al centro donde estéel interventor con el sueldo más bajo, solo los otros interventores, no el que tieneel sueldo más bajo. Ordena por sueldo de menor a mayor.
+
+4.5. Consulta 5
+Obtener cuánto dinero ha gastado cada senador comprando votos. Mostrarlojunto a su dni y partido, ordenado de mayor gasto a menor. Cada senador paga lacantidad en "pago_compra_voto" por cada voto comprado.
+Crea otra consulta que muestre el total gastado por cada partido en comprarvotos. Ordena ahora de menor a mayor gasto. Deben aparecer todos los partidos,aunque no hayan gastado nada en comprar votos.
+
+4.6. Vistas y Consultas
+Ignorar el campo num_votos.
+Crea una vista que cuente los votos que ha obtenido cada senador en lacircunscripción de 'Impunícia' guardando el dni y sus votos obtenidos.
+Crea otra consulta que muestre el nombre y el número de votos del senador o lossenadores más votados en esa circunscripción. Realiza la consulta de 2 modos:
+a) Usando la vista anterior.
+b) Sin usar la vista anterior.

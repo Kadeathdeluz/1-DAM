@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+        display: flex;
+       
+      }
+     
+      #content div {
+        width: 220px;
+        border: 3px solid rgba(0,0,0,.2);
+      }
+     
+      .box {
+        flex-shrink: 0;
+      }
+     
+      .box1 {
+        flex-shrink: 2;
+      }
+     
+      </style>
+    
+</head>
+<body>
+    
+  <p>El ancho de los flex items es 120px.</p>
+  <p>A, B, C tiene flex-shrink:1. D y E tienen flex-shrink:2</p>
+  <p>El ancho de D y E es menor al de los otros.</p>
+  <div id="content">
+    <div class="box" style="background-color:red;">A</div>
+    <div class="box" style="background-color:lightblue;">B</div>
+    <div class="box" style="background-color:yellow;">C</div>
+    <div class="box1" style="background-color:brown;">D</div>
+    <div class="box1" style="background-color:lightgreen;">E</div>
+  </div>
+
+</body>
+</html>

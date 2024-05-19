@@ -1,0 +1,85 @@
+Exercise 1: Given the IP 159.14.227.121/13
+
+1- IP class: 
+Class B (128-191 first octet) (and 13 bits to submask - IP: x.x.x.x/13)
+
+2- Scope: 
+Public.
+
+3- Subnet mask: 
+255.248.0.0 (13 means 13 bits are 1 at the submask -> 11111111.11111000.00000000.00000000 )
+
+4- IP to binary: 
+10011111.00001110.11100011.01111001
+
+5- IP version: 
+IPv4.
+
+Exercise 2: Given the IP 79.131.29.24/14
+
+1- Mask: 
+255.252.0.0 (class A)
+
+2- First host of the network:
+79.128.0.1
+
+3- Last host of the network:
+79.131.255.254
+
+4- Broadcast address:
+79.131.255.255 (the last address, not for host)
+
+Exercise 3: Given the IPs:
+a) fde4:0088:0000:0040:8000:0000:0000:002a
+b) fd00::8000:0:0:c110
+c) fd06:1200:8100:8400:2491:0000:0100:1000
+d) fd20:202:0:1800::
+
+1- IP version:
+a- IPv6
+b- IPv6
+c- IPv6
+d- IPv6
+
+2- Expanded or compressed notation?
+a- Exp
+b- Comp
+c- Exp
+d- Comp
+
+3- Express in the opposite notation(compressed-expanded, expanded-compressed):
+a- fde4:88:0:40:8000::2a
+b- fd00:0000:0000:0000:8000:0000:0000:c110
+c- fd06:1200:8100:8400:2491:0:100:1000
+d- fd20:0202:0000:1800:0000:0000:0000:0000
+
+Exercise 4:
+
+- Best Topology: Star.
+
+- Wired/Wireless/Mixed Network: Wired due to need high speeds to receive manufacturing orders at the same time, f.e.
+
+- Devices to implement network: 14 computers (3 designer computers, 10 operator computers and 1 shared computer), 2 switches to allow the connection between the 3 subnets (designers, operators and controllers).
+
+- Mask and IPs to assign: 
++ Mask: 255.255.255.X/24 or a /27
++ IPs:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

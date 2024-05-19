@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .externo {
+        background-color: blanchedalmond;
+        outline: 5px solid red;
+        display: flex;
+        /*flex-direction: column; Se aplica la direccion al contenedor padre*/
+    }
+    .interno{
+        font-size: 3em;
+        background-color: burlywood;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+        outline: 2px dashed black; /*Borde que no ocupa espacio*/
+        width: 200px;
+        height: 100px;
+        /*padding: 50px;
+        margin:50px;*/
+        
+    }
+ 
+ 
+ 
+ </style>
+ 
+ <body>
+     <div class="externo"> <!-- Flex container -->
+         <div class="interno">1</div> <!-- Flex items -->
+         <div class="interno">2</div>
+         <div class="interno">3</div>
+         <div class="interno">4</div>
+         <div class="interno">5</div>
+       </div>
+      
+ </body>
+ 
+</html>

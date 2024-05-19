@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+.banner{
+    height: 150px;
+    width: 150px;
+    background-image: linear-gradient(#9f31fa,#fba8ee,#fa31a3) ;
+    border-radius:0% 20% 20% 0%;
+    box-shadow: 1px 1px 3px 2px grey;
+    float:left;
+}
+
+.banner:hover{
+    width: 250px;
+}
+.banner:hover .mensaje {
+    visibility: visible;
+    position: relative;
+    top:20px;
+    left:300px;
+}
+.mensaje {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    float:right;
+}
+.banner:active{
+    background-image: url("lactarius.jpg");
+    background-position: 20% center;
+    background-size: cover;
+    border-radius:10%  20% 20% 30%;
+    width: 200px;
+    opacity: 1;
+}
+.banner:active .mensaje {
+    visibility: hidden;
+}
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <span class="mensaje">Cómete estas setas!</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+body{
+    margin: 0 auto;
+    width: 1200px;
+}
+header, footer{
+    text-align: center;
+    background-color: lightslategray;
+    height: 150px;  
+    color: white;
+}
+.centrado{
+      /*centrado absoluto */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+nav{
+    background-color: green;
+}
+main{
+    overflow: hidden;
+    height: 100%;
+}
+aside{
+    float: left;
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-right: 4px solid lightseagreen;
+
+}
+#contenido{
+    float: right;
+    width: 80%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* EJERCICIO A*/
+/** Todos los h2 dentro del article se verían afectados, aunque estuvieran dentro de otro div o elemento**/
+article h2{
+    color: rgb(19, 189, 19);
+    font-weight: 800;
+}
+/* EJERCICIO B */
+/** Sólo los span contenidos directamente en p se ven afectados, si está contenidos en otro div o elemento no **/
+p > span{
+    background-color: lightblue;
+}
+
+/* EJERCICIO C */
+/** Dentro de aside, sólo el div que está seguido de un p está afectado**/
+aside p + div{
+    border-radius: 10px;
+    height: 60px;
+    background-color: lightskyblue;
+}
+
+/** EJERCICIO D **/
+input[type="email"]:valid{
+    box-shadow: 1px 1px 3px green;
+}
+input[type="email"]:invalid{
+    box-shadow: 1px 1px 3px red;
+}
+/** EJERCICIO E **/
+nav{
+    align-items: center;
+}
+nav ul li{
+    display: inline-block;
+    padding: 20px;
+    
+}
+nav ul li:hover{
+    background-color: lightpink;
+}
+nav ul li a{
+    color:white;
+}
+
+/** EJERCICIO F **/
+:root{
+    background-color: black;
+    color: white;
+}
+
+/** EJERCICIO 4 **/
+article p::first-letter{
+    color: green;
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+article p::first-line{
+    color: hotpink;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container > div {
+        display: flex;
+        font-family: "Courier New", "Lucida Console", monospace;
+      }
+      
+      #container > div > div {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(-45deg, #788cff, #b4c8ff);
+      }
+      
+      #flex-start {
+        justify-content: flex-start;
+      }
+      
+      #center {
+        justify-content: center;
+      }
+      
+      #flex-end {
+        justify-content: flex-end;
+      }
+      
+      #space-between {
+        justify-content: space-between;
+      }
+      
+      #space-around {
+        justify-content: space-around;
+      }
+      
+      #space-even{
+        justify-content: space-evenly;
+      }
+      
+      </style>
+</head>
+<body>
+    <div id="container">
+        <p>justify-content: flex-start</p>
+        <div id="flex-start">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+     
+        <p>justify-content: flex-end</p>
+        <div id="flex-end">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+     
+        <p>justify-content: center</p>
+        <div id="center">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+     
+        <p>justify-content: space-between</p>
+        <div id="space-between">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+     
+        <p>justify-content: space-around</p>
+        <div id="space-around">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+    
+        <p>justify-content: space-even</p>
+        <div id="space-even">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+     
+    
+</body>
+</html>

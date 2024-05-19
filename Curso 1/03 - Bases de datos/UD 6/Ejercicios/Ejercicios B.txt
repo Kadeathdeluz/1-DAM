@@ -1,0 +1,123 @@
+Ejercicio 2.1.
+
+SELECT Ciudad, COUNT(*) AS "Num_de_Clientes" 
+FROM Clientes 
+GROUP BY Ciudad 
+ORDER BY 2 DESC;
+
+Ejercicio 2.2.
+
+SELECT Ciudad, COUNT(*) AS "Num_de_Clientes" 
+FROM Clientes
+GROUP BY Pais, Ciudad
+HAVING Pais = "España"
+ORDER BY 1;
+
+//Como algunas Ciudades tienen como Pais "Spain" tenemos que hacer un UPDATE para incluirlas
+UPDATE Clientes
+SET Pais = "España"
+WHERE Pais = "Spain";
+
+
+Ejercicio 2.3.
+
+SELECT Ciudad, COUNT(*) AS "Num_de_Clientes" 
+FROM Clientes
+GROUP BY Pais, Ciudad
+HAVING COUNT(*) > 1 && Pais = "España"
+ORDER BY 2 DESC;
+
+Ejercicio 2.4.
+
+SELECT Gama, MAX((PrecioVenta - PrecioProveedor) ) AS Beneficio_Maximo
+FROM Productos
+WHERE CantidadEnStock > 0
+GROUP BY Gama
+ORDER BY 2 DESC;
+
+Ejercicio 2.5.
+
+SELECT NombreCliente AS Cliente, COUNT(*) AS Num_Pedidos
+FROM Clientes INNER JOIN Pedidos
+ON Clientes.CodigoCliente = Pedidos.CodigoCliente
+GROUP BY NombreCliente
+ORDER BY 2 DESC;
+
+Ejercicio 2.6.
+
+SELECT NombreCliente, COUNT(*) AS Num_Rechazos
+FROM Clientes 
+INNER JOIN Pedidos
+ON Clientes.CodigoCliente = Pedidos.CodigoCliente
+WHERE Pedidos.Estado = "Rechazado"
+GROUP BY NombreCliente
+ORDER BY 2 DESC;
+
+
+Ejercicio 2.7.
+
+SELECT SUM(Cantidad) AS Importe_Total
+FROM Pagos
+INNER JOIN Pedidos
+ON Pagos.CodigoCliente = Pedidos.CodigoCliente
+WHERE CodigoPedido = 10;
+
+Ejercicio 2.8.
+
+SELECT CodigoProducto, MAX(Cantidad) AS "Cantidad_Máxima"
+FROM DetallePedidos
+GROUP BY CodigoProducto
+HAVING MAX(Cantidad) >= 100
+ORDER BY 2;
+
+
+Ejercicio 2.9.
+
+SELECT CodigoProducto, SUM(Cantidad * PrecioUnidad) AS Importe_Total
+FROM DetallePedidos
+GROUP BY CodigoProducto
+HAVING SUM(Cantidad * PrecioUnidad) >= 800 && SUM(Cantidad * PrecioUnidad) <= 1000
+ORDER BY 2;
+
+Ejercicio 2.10.
+
+SELECT CodigoProducto, SUM(Cantidad * PrecioUnidad) AS Importe_Total
+FROM DetallePedidos
+WHERE PrecioUnidad >=50 && PrecioUnidad <= 100
+GROUP BY CodigoProducto
+HAVING SUM(Cantidad * PrecioUnidad) >= 800 && SUM(Cantidad * PrecioUnidad) <= 1000
+ORDER BY 1;
+
+Ejercicio 2.11.
+
+SELECT CodigoCliente, NombreCliente, COUNT(*) AS Numero_Pedidos
+FROM Clientes C 
+INNER JOIN Empleados E
+ON C.CodigoEmpleadoRepVentas = E.CodigoEmpleado && E.Nombre = "Emmanuel"
+GROUP BY C.CodigoCliente;
+
+Ejercicio 2.12.
+
+SELECT E.Nombre, COUNT(P.CodigoPedido) AS Total_Pedidos_Clientes
+FROM Clientes C 
+INNER JOIN Empleados E 
+ON C.CodigoEmpleadoRepVentas = E.CodigoEmpleado
+INNER JOIN Pedidos P 
+ON C.CodigoCliente = P.CodigoCliente
+GROUP BY E.Nombre
+ORDER BY 2 ASC;
+
+Ejercicio 2.13.
+Mostrar cuál es el beneficio máximo (en una columna denominada Beneficio) que se puede
+obtener con la venta de un producto de los que tenemos en stock (si no tiene stock no
+cuenta). Necesitamos saber también a qué producto pertenece ese beneficio.
+
+//Da como resultado 195 filas (nota: usar LIMIT 10 o así para acotar el resultado)
+SELECT Nombre, MAX(PrecioVenta - PrecioProveedor) AS Beneficio
+FROM Productos
+WHERE CantidadEnStock > 0
+GROUP BY Nombre
+ORDER BY 2 DESC;
+
+
+

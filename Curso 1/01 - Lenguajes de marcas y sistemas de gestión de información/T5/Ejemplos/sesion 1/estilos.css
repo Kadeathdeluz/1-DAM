@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Playfair Display', serif;
+    font-variant: small-caps;
+}
+
+h1,h2,h3{
+    text-align: center;
+    color:steelblue;
+    font-weight: 400;
+}
+
+h1, h2{
+    margin: 2em 0;
+}
+
+h4{
+    font-weight: 400;
+}
+
+.banner{
+    height: 150px;
+    width: 30px;
+    position: fixed;
+    z-index: 5;
+    top: 40px;
+    right: 0px;
+    background-image: linear-gradient(#fa6c31,#fbcda8,#fa6c31) ;
+    background-position: -50px -0px;
+    border-radius:20%  0 0 40%;
+    background-size: 180%;
+    box-shadow: 1px 1px 3px 2px grey;
+    transition: all .5s;
+}
+
+.banner:hover{
+    width: 40px;
+}
+
+.banner:hover .tooltiptext {
+    visibility: visible;
+}
+
+.banner .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 40%;
+    left: -100%;
+    margin-left: -100px;
+}
+
+.banner .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 100%;
+    margin-left: -5px;
+    border: 4px solid black;
+    rotate: 45deg;
+}
+
+header{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 6em 0 -2em; 
+}
+
+header img{
+    max-height: 200px;
+    transition: all .8s;
+    border-radius: 50% 0 0 50%;
+    position: absolute;
+    right: 41%;
+}
+
+.banner:active{
+    background-image: url("../img/cuponDescuento.jpg");
+    background-position: 20% center;
+    background-size: cover;
+    border-radius:10%  0 0 30%;
+    width: 200px;
+    opacity: 1;
+}
+
+.banner:active .tooltiptext {
+    visibility: hidden;
+}
+
+header img:hover{
+    opacity: 0.5;
+    transform: translateY(1px) rotate(-10deg) scale(120%);
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    position: relative; 
+    box-shadow: 1px 1px 1px 3px rgba(70, 70, 70, 0.452) ;
+    background-image: linear-gradient( 125deg, #66291a ,cornsilk 53%,#66291a);
+    height:70px;
+}
+
+nav a{
+    transition: all .5s;
+}
+
+nav li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 1.5em;
+    font-size: 1.2em;
+    padding: 1em;
+    transition: all .8s;
+}
+nav a:hover{
+    font-size: 1.2em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.294);      
+}
+
+.socialMediaLinks{
+    margin: .5em 1em;
+    font-size: 1.5em;  
+}
+
+.socialMediaLinks a{
+    margin-right: .5em;
+}
+
+.socialMediaLinks a.fa-twitter { 
+    color: #00aced;
+}
+.socialMediaLinks a.fa-facebook-f { 
+    color: #3b5998; 
+}
+.socialMediaLinks a.fa-pinterest { 
+    color: #C92228; 
+}
+.socialMediaLinks a.fa-instagram { 
+    color: #8a3ab9; 
+}
+.socialMediaLinks a.fa-google-plus-g { 
+    color: #d34836; 
+}
+
+.socialMediaLinks a:hover{
+    opacity: .5;
+}
+
+.subnav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em; 
+}
+
+.supnav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 2em; 
+}
+
+.covidfree{
+    background-image: url("../img/selloCovidfree.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    width: 160px;
+    height: 140px;
+    position: relative;
+    top:10px;
+}
+
+.michelin{
+    background-image: url("../img/michelinStars.png");
+    background-size: cover;
+    width: 220px;
+    height: 180px;
+    position: relative;
+    top:28px;
+    z-index: 1;
+}
+
+.telephone{
+    margin: .5em 1em;
+    font-size: 1.2em; 
+    color: #fa6c31;
+}
+
+

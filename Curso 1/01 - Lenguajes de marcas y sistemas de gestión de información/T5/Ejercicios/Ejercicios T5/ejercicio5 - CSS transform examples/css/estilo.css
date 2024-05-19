@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+div {
+  border: 5px solid;
+  width: 260px;
+  margin: 10px;
+  background-color: rgb(192, 223, 184);
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  word-wrap: break-word;
+}
+h2 {
+  margin: 15px 0 -15px 40px;
+}
+img {
+  padding: 10px;
+}
+
+.original {
+  float: left;
+  border-style: none;
+  border-width: 0;
+  background-color: white;
+}
+.borde {
+  border-radius: 40px;
+}
+.rotate {
+  margin-top: 50px;
+  transform: rotate(45deg);
+}
+
+.scale {
+  margin-top: 50px;
+  transform: scale(0.5);
+}
+
+.skewx {
+  margin-left: 40px;
+  transform: skewX(-30deg);
+}
+.skewy {
+  margin-left: 40px;
+  transform: skewY(-20deg);
+}
+
+.translate {
+  margin-left: 40px;
+  transform: translate(70px, 70px);
+}

@@ -1,0 +1,29 @@
+8,5/10
+
+
+SCRIPT 1      1.75/2
+
+Sé que son scripts sencillitos pero debes añadir una prueba de uso de cada camino, un partido que exista y uno que no, lo mismo para todos los ejercícios, pero sólo lo resto aquí.
+
+SCRIPT 2      1.5/2
+
+Este tipo de funciones casi nunca son determinísticas, ya que consultan datos de la BD, si los datos cambian el resultado cambia; una persona/político puede cambiar de circunscripción y en la segunda, puede que la lanzes antes de los resultados definitivos, durante el escrutinio, o que se rectifiquen votos, con lo que también puede cambiar el resultado. Cómo si no os lo hubiese repetido suficiente...
+
+Por otro lado, también deberías comprobar que la ID existe, el enunciado remarca lo del senador para ayudaros a detectar que la comprobaciónn era con SENADOR y no con VOTANTE, no porque sea lo único necesario.
+
+SCRIPT 3      1.5/2
+
+Tu consulta es la forma más rebuscada y probablemente una de las menos eficientes posibles para sacarlo, ¿no era más fácil directamente si el count de interventores en el centro del interventor es 1?
+
+No metas nunca en un mismo IF este tipo de comparación  OLD.loquesea <> NEW.loquesea y las consultas. La idea es que esa comparación es inmediata, si no se cumple entonces ni siquiera necesito la consulta y ahorro el tiempo de hacerla, así que la consulta se usa en otro IF dentro del primero. El resultado es el mismo, tu respuesta es correcta, pero pierde el sentido hacer la comparación de NEW y OLD así, de la otra manera es mucho más eficiente. Si lo tenemos así en algún ejercício/ejemplo y lo tienes localizado avísame para que lo cambie.
+
+SCRIPT 4      1.75/2
+
+Solo como comentario la consulta se puede poner en el SET num_votos = CONSULTA del UPDATE, directamente
+Deberías comprobar en el UPDATE si lo que cambia es el dni_senador, ya que si no es así el número de votos del senador no cambia y te ahorras 2 consultas por UPDATE, por eficiencia.
+
+SCRIPT 5      2/2
+
+No necesitas DISTINCT, por definición en id_Digital y Senador cada dni/id tiene una circunscripción y son la CP, nova a haber repeticiones.
+
+Lo comentado antes IF  NEW<>OLD independiente antes que nada en los UPDATE y las consultas dentro, si el dato que importa no cambia, mejor ahorrarnos las consultas y seguir, la actualización no va a ofrecer problemas. PEro ya he restado por eso antes.

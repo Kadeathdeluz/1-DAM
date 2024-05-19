@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+
+h3 {
+    font-size: 0.8em;
+}
+
+nav {
+    height: 3em;
+    width: 100%;
+    background-color: rgb(255, 215, 39);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 40%;
+    top: 1em;
+}
+
+ul > li {
+    list-style-type: none;
+    flex-wrap: nowrap;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover::first-letter {
+    color: rgb(62, 162, 255);
+    text-decoration: underline ;
+}
+
+.padre {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.foto {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 1px solid black;
+    left: 50%;
+    top: 25%;
+}
+
+.numeros > p {
+    color: rgb(62, 162, 255);
+    font-weight: 900;
+}
+
+button {
+    border-radius: 1em;
+    background-color: rgb(255, 215, 39);
+    width: 80%;
+    height: 2em;
+    margin-top: 1em;
+    transition: all 0.8s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.cabecera {
+    height: 25%;
+    border-bottom: 1px solid black;
+}
+
+.datos {
+    height: 75%;
+    width: 100%;
+    position: relative;
+    top: 20%;
+}
+
+.hijo {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 16px;
+    transition: all 0.8s;
+}
+
+.hijo:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.followers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Fotos como background */
+.padre .hijo:nth-child(1) .foto {
+    background-image: url(../img/kira.jpg);
+}
+
+.padre .hijo:nth-child(2) .foto {
+    background-image: url(../img/rocky.webp);
+}
+
+.padre .hijo:nth-child(3) .foto {
+    background-image: url(../img/coco.jpg);
+}
+
+/* Colores fondo cabeceras */
+
+.padre .hijo:nth-child(1) .cabecera{
+    background-color: gainsboro;
+}
+
+.padre .hijo:nth-child(2) .cabecera{
+    background-color: rgb(255, 215, 39);
+}
+
+.padre .hijo:nth-child(3) .cabecera{
+    background-color: gray;
+}

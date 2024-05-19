@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+          display: flex;
+        }
+      
+        .box{
+          background-color: darkorange;
+          flex-grow: 1;
+        }
+      
+        .box2{
+          background-color: pink;
+          flex-grow: 2;
+
+          /*Si no defino ninguna base, reparte el espacio proporcionalmente conforme hemos visto*/
+
+          /*Define el tamaño inicial como si fuera width*/
+          /*flex-basis: 400px;*/
+
+          /*El valor auto, como hemos comentado antes, coge el valor que tiene el width*/
+          /*flex-basis: auto;
+          width: 300px;*/
+
+          /*Este valor coge como tamaño inicial el contenido*/
+          /*flex-basis: content;*/
+        }
+      
+        /*Cálculo del factor de crecimiento
+        
+        Sumamos todos los flex-grow declarado
+        uno: 1
+        dos: 3
+        tres: 1
+        Tamaño contenedor: 100
+
+        Division= 100/5 = 20
+        
+        Asignacion de espacio = 20 * Factor de crecimiento 
+        uno: 20
+        dos: 60
+        tres: 20
+flex basis actúa como propiedad que define el tamaño inicial de un elemento flexible, justo antes de aplicarle factores de crecimiento o decrecimiento. Puede verse como la propiedad width, pero en el ámbito de flex-box. 
+Esta propiedad es aplicada conjuntamente con flex-grow y flex-shrink.
+A partir del valor flex-basis declarado el elemento, este escogerá / disminuirá su tamaño en función del crecimiento o decrecimiento del contenedor padre, el cual implementa flex-box. 
+
+        */
+      </style>
+    </head>
+    <body>
+      
+      
+      <div class="container">
+        <div class="box">Uno</div>
+        <div class="box2">Dos</div>
+        <div class="box">Tres</div>
+      </div>
+</body>
+</html>

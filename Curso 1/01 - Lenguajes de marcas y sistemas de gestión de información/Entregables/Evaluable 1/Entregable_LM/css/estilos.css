@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css?family=Impact|Fjalla+One|Open+Sans|sans+serif");
+
+/* ----------------- || Estilos genéricos: html, encabezados, etc. (INI) ----------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    align-content: center;
+}
+
+h1,
+h2,
+h3,
+header {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    display: inline;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+div>p {
+    display: block;
+}
+
+.just-float-left {
+    float: left;
+}
+
+.float_izquierda {
+    float: left;
+    padding-right: 10px;
+}
+
+.float_derecha {
+    padding: 60px;
+}
+
+header,
+nav,
+main,
+footer {
+    padding-inline: 25%;
+}
+
+.eventos {
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Estilos genéricos: html, encabezados, etc. (FIN) --- */
+
+/* ----------------- Estilos header (INI) ----------------- */
+
+header {
+    background-color: #216288;
+    text-align: right;
+    padding-top: 1.2em;
+    min-height: 220px;
+    width: 100%;
+}
+
+img#cerebro {
+    width: 200px;
+    height: 175px;
+    padding: 0px;
+    text-align: left;
+    float: left;
+}
+
+
+img.logo {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+img.logo:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    animation-duration: 0.3s;
+}
+
+/* ----------------- Estilos header (FIN) ----------------- */
+/* ------------------ Estilos nav (INI) -------------------*/
+
+nav {
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    background-color: #b8d414;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+nav ul {
+
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    text-align: center;
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: black;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+}
+
+/* ------------------ Estilos nav (FIN) -------------------*/
+
+/* ------------------ Estilos main (INI) -------------------*/
+/* ------------------ Estilos main (FIN) -------------------*/
+
+/* ------------------ Estilos tablas (INI) -------------------*/
+
+div#tabla {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+table tr * {
+    font-size: 12px;
+    padding: 2px;
+}
+
+table {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+caption {
+    font-size: 18px;
+    color: white;
+    background-color: black;
+}
+
+tr th {
+    background-color: #b8d414;
+}
+
+tr#separacion>td {
+    border-bottom: 2px solid black;
+}
+
+table th tr:nth-child(even) {
+    color: black;
+    background-color: #b8d414;
+    text-align: start;
+}
+
+
+tr:nth-child(even) {
+    background-color: #e5ffd4;
+}
+
+tfoot tr td,
+tfoot a {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ------------------ Estilos tablas (FIN) -------------------*/
+
+/* ------------------ Estilos footer (INI) -------------------*/
+footer {
+    background-color: black;
+    text-align: left;
+    clear: both;
+}
+
+footer p {
+    color: white;
+    font-size: 16px;
+}
+
+/* ------------------ Estilos footer (FIN) -------------------*/
+
+/* ------------------ Estilos index.html (INI) -------------------*/
+#jornadas {
+    float: left;
+    text-align: right;
+    line-height: 2.8em;
+}
+
+#jornadas_y_video {
+    align-items: center;
+    text-align: center;
+}
+
+.jornadas-informatica-video {
+    display: flex;
+    align-items: center;
+}
+
+#ubicacion_y_fechas {
+    clear: both;
+    display: block;
+    margin-top: 30px;
+    background-color: #e5ffd4;
+    height: 280px;
+}
+
+.donde {
+    padding-left: 10px;
+    float: left;
+    line-height: 40px;
+
+}
+
+.cuando {
+    float: right;
+    line-height: 50px;
+    padding-right: 10px;
+}
+
+.eventos {
+    display: flex;
+}
+
+img.img_eventos {
+    width: 300px;
+}
+
+section div h2 {
+    border-bottom: dotted #b8d414;
+}
+
+section h2+p,
+section h2+p>a {
+    font-size: 16px;
+}
+
+span.negrita,
+span.negrita>a {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ------------------ Estilos index.html (FIN) -------------------*/
+
+/* --------------- Estilos programación.html (INI) ---------------*/
+
+div#programacion {
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#progamacion li {
+    font-size: 40px;
+}
+
+div#programacion>div {
+    width: auto;
+}
+
+li>h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: inline;
+    background-color: #00ff00;
+}
+
+/* --------------- Estilos programación.html (FIN) ---------------*/
+
+/* --------------- Estilos inscripción.html (INI) ---------------*/
+
+form * {
+    font-size: 16px;
+}
+
+fieldset {
+    padding: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel] {
+    border: 2px solid gray;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:invalid:enabled:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.788);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type=text]:valid,
+input[type=email]:valid,
+input[type=tel]:valid {
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 0, 0.788);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* --------------- Estilos inscripción.html (FIN) ---------------*/

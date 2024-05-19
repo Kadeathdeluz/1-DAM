@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Estilos generales y fuente
+nota: añadido suavizado para las transiciones */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    transition: all 0.8s;
+}
+
+/* Ocultamos los estilos de las ul */
+ul li {
+    list-style-type: none;
+}
+
+/* Forzamos también que los enlaces no tengan esos estilos feos predefinidos */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+/* Al poner el cursor sobre los links se convierte en grab */
+a:hover {
+    cursor: grab;
+}
+
+/* Al hacer click en los links el cursor se convierte en grabbin */
+a:active {
+    cursor: grabbing;
+}
+
+/* Header */
+header{
+    background-color: rgb(255, 249, 194);
+    text-align: center;
+}
+
+/* Main: le doy un tamaño de 500px para que se vea por debajo del nav */
+main {
+    height: 500px;
+    width: 100%;
+    background-color: rgb(255, 249, 194);
+}
+
+/* Título del header */
+h1 {
+    padding: 2em;
+}
+
+/* Nav*/
+nav {
+    height: 3em;
+    width: 100%;
+    background-color: rgb(190, 190, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Colores de los menús */
+.main_menu,
+.sub1,
+.sub2 {
+    background-color: rgb(149, 149, 149);
+}
+
+/* Menú principal */
+.main_menu {
+    height: 3em;
+    width: fit-content;
+    border: 2px solid black;
+}
+
+/* Disposición de las listas dentro del menú principal*/
+.main_menu > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.main_menu li {
+    padding: 10px;
+}
+
+/* Submenú 1 (E.S.O., ...)*/
+.sub1 {
+    display: flex;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    width: fit-content;
+    position: relative;
+    left: 65%;
+    bottom: 0.3em;
+    box-shadow: 1px 1px 8px 1px orange;
+    border-radius: 1em 50% 1em 50%;
+    /*visibility: hidden;*/
+    transition: all 0.5s;
+}
+
+/* Submenú 2 (E.S.O., ...) */
+.sub2 {
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    width: fit-content;
+    position: relative;
+    left: 90%;
+    bottom: 100%;
+    box-shadow: 1px 1px 8px 1px red;
+    border-radius: 50% 1em 50% 1em;
+    /*visibility: hidden;*/
+    transition: all 0.5s;
+}
+
+/* Efector hover de los links de los submenús */
+a:hover {
+    transition: ease;
+    color: orange;
+    transition: ease-in 0.3s;
+}
+
+/* Falta esconder los submenús y mostrarlos al hacer hover sobre formación */
+
+/* MEDIA QUERY */
+@media (max-width: 900px) {
+    /* Suaviza el cambio entre un tamaño y otro */
+    * {
+        transition: all 0.8s;
+    }
+
+    /* Cambia la disposición del menú */
+    .main_menu > ul{
+        flex-direction: column;
+    }
+    .main_menu {
+        height: 8em;
+    }
+    nav {
+        height: 8em;
+        justify-content: start;
+        align-items: start;
+    }
+
+    /* Cambia los colores de fondo del header y del main */
+    header, main {
+        background-color: rgb(255, 185, 160);
+    }
+    /* Ajusto la posición del submenú 2 */
+    .sub2 {
+        transform: translate(10%, 55%);
+    }
+}

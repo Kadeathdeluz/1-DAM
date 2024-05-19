@@ -1,0 +1,8 @@
+#mensajeOculto{
+    display: none;
+}
+
+#mensajeOculto:target{
+    display: block;
+}
+

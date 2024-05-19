@@ -1,0 +1,11 @@
+body {
+    background-color: lightblue;
+}
+
+div {
+    color:red; border: black 2px solid;
+}
+
+p {
+    color:black;
+}

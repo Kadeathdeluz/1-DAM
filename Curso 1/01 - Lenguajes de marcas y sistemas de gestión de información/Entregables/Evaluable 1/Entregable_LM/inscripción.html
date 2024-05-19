@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción</title>
+</head>
+
+<body>
+    <header>
+        <div class="encabezado">
+            <div class="float_izquierda">
+                <img id="cerebro" src="img/logo.png" alt="Logo Cerebro">
+            </div>
+            <div class="float_derecha">
+                <h1>II Jornadas de Informática</h1>
+                <p>Valencia, 3 y 4 de febrero de 2024</p><br>
+
+                <a href=""><img class="logo" src="img/facebook.svg" alt="Facebook logo"></a>
+                <a href=""><img class="logo" src="img/square-x-twitter(1).svg" alt="X (Twitter) logo"></a>
+                <a href=""><img class="logo" src="img/instagram.svg" alt="Instagram logo"></a>
+            </div>
+        </div>
+
+    </header>
+
+    <nav>
+        <div>
+            <ul>
+                <li><a href="index.html">Inicio </a></li>
+                <li><a href="programación.html">Programación</a></li>
+                <li><a href="inscripción.html">Registro a las jornadas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="formulario">
+            <form method="get" target="_self">
+
+                <fieldset id="datos_personales">
+                    <legend>Datos personales:</legend><br>
+                    <label for="input_nombre">Nombre:*</label> <br>
+                    <input type="text" id="input_nombre" name="input_nombre" minlength="2" maxlength="50"
+                        pattern="[A-Za-z ]+" required><br>
+
+                    <label for="input_apellidos">Apellidos:*</label> <br>
+                    <input type="text" id="input_apellidos" name="input_apellidos" pattern="[A-Za-z ]+" required><br>
+
+                    <label for="input_correo">Correo electrónico:*</label> <br>
+                    <input type="email" id="input_correo" name="input_correo"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
+
+                    <label for="input_telefono">Teléfono:*</label> <br>
+                    <input type="tel" id="input_telefono" name="input_telefono" pattern="[0-9]{9}" required><br><br>
+                    <label for="foto">Adjunta una fotografía:</label><br>
+                    <input type="file" id="foto" name="foto">
+                </fieldset>
+
+                <fieldset id="perfil_fs">
+                    <legend>Perfil de usuario:</legend><br>
+
+                    <label for="descripcion">Descripción:</label><br>
+                    <textarea name="descripcion" id="descripcion" rows="5" cols="30"
+                        maxlength="240">Explica tus motivos brevemente (240 caracteres).</textarea>
+
+                    <fieldset id="profesiones_fs">
+                        <legend>Actividad profesional:*</legend><br>
+
+                        <input type="radio" name="profesiones" id="bachillerato" value="Estudiante de bachillerato"
+                            required>
+                        <label for="bachillerato">Estudiante de bachillerato</label><br>
+
+                        <input type="radio" name="profesiones" id="universidad" value="Estudiante universitario">
+                        <label for="universidad">Estudiante universitario</label><br>
+
+                        <input type="radio" name="profesiones" id="doctorado" value="Doctorado">
+                        <label for="doctorado">Doctorado</label><br>
+
+                        <input type="radio" name="profesiones" id="informatico" value="Profesional Informático">
+                        <label for="informatico">Profesional Informático</label><br>
+
+                        <input type="radio" name="profesiones" id="profesor" value="Profesor">
+                        <label for="profesor">Profesor</label><br>
+
+                        <input type="radio" name="profesiones" id="otros" value="Otros">
+                        <label for="otros">Otros</label><br>
+                    </fieldset><br>
+
+                    <fieldset id="talleres_fs">
+                        <legend>¿En qué talleres estás interesado?</legend><br>
+
+                        <input type="checkbox" name="talleres" id="cuantica" value="cuantica">
+                        <label for="cuantica">Computación Cuántica: la Próxima Revolución de la Informática</label><br>
+
+                        <input type="checkbox" name="talleres" id="animacion" value="animacion">
+                        <label for="animacion">Animación 3D en la Industria del Videojuego</label><br>
+
+                        <input type="checkbox" name="talleres" id="moviles" value="moviles">
+                        <label for="moviles">Taller sobre análisis de dispositivos móviles</label><br>
+
+                        <input type="checkbox" name="talleres" id="agiles" value="agiles">
+                        <label for="agiles">Metodologias Ágiles y Transformación Digital</label><br>
+
+                        <input type="checkbox" name="talleres" id="realidad" value="realidad">
+                        <label for="realidad">Realidad virtual y aumentada: experiencias asequibles y útiles en
+                            educación</label><br>
+
+                        <input type="checkbox" name="talleres" id="lego" value="lego">
+                        <label for="lego">First Lego League</label><br>
+                    </fieldset>
+
+                    <fieldset id="dias_fs">
+                        <legend>Seleccione una de las tres opciones siguientes:*</legend>
+                        <select name="dias" id="dias" required>
+                            <option value="">--Selecciona una opción--</option>
+                            <option value="ambos">Asistiré los días 3 y 4 de febrero</option>
+                            <option value="tres">Asistiré sólo el día 3 de febrero</option>
+                            <option value="cuatro">Asistiré sólo el día 4 de febrero</option>
+                        </select>
+                    </fieldset>
+                </fieldset>
+                
+                <input type="checkbox" name="aceptar" id="aceptar_cb" required>
+                <label for="aceptar_cb">He leído y acepto la <a href="">política de privacidad</a>
+                    y el <a href="">aviso legal</a>.</label>
+
+                <input type="submit" value="Enviar" id="submit_btn"> <br><br>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            Actividad realizada por Roldán Sanchis Martínez,
+            para la asignatura de Lenguaje de Marcas.
+        </p>
+        <p>
+            Primer trimestre del curso 2023-2024.
+        </p>
+    </footer>
+</body>
+
+</html>

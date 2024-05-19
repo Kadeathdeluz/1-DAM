@@ -1,0 +1,71 @@
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+}
+.grid{
+    display:grid;
+    grid-template-areas:
+    'h h h h'
+    'n n n n'
+    'm m m a'
+    'm m m a'
+    'm m m a'
+    'f f f f';
+
+    grid-gap:10px;
+    height: 100vh;
+}
+
+header{
+    background-color: cornflowerblue;
+    grid-area: h;
+}
+
+nav{
+    background-color: gainsboro;
+    grid-area: n;
+}
+
+main{
+    background-color: crimson;
+    grid-area: m; 
+}
+
+aside{
+    background-color: cornsilk;
+    grid-area: a;
+}
+
+footer{
+    background-color: black;
+    grid-area: f;
+}
+
+nav,header,footer, main, aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color:white;
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Consolas';
+}
+
+aside, nav{
+    color: black;
+}
+
+@media screen and (max-width: 992px) {
+
+    .grid{
+        display:grid;
+        grid-template-areas:
+        'h h h h'
+        'n n n n'
+        'm m m m'
+        'm m m m'
+        'a a a a'
+        'f f f f';    
+    }   
+}

@@ -1,0 +1,11 @@
+Buenas tardes,
+a mí me habría gustado hablar de MongoDB por hablar de BBDD no relacionales, pero voy a hablaros de Firebase Realtime Database System (FRDS) ya que está más orientada al Mobile Development.
+
+FRDS es un Sistema de Gestión de Bases de Datos (SGBD) no relacional (NoSQL) de almacenamiento en la nube en tiempo real. Los datos se almacenan en formato JSON. Por poneros en contexto, JSON es un formato de texto empleado para el almacenamiento, intercambio y acceso a datos que forma parte del sistema JavaScript con sintaxis de este lenguaje; es similar a XML y por ello se emplea como alternativa a dicho lenguaje de marcas. FRDS fue el primer producto de Firebase (adquirido por Google en 2014) y tiene sentido dado el enfoque "mobile" de Google en el ámbito del desarrollo de aplicaciones. FRDS se emplea para Android, iOs y JavaScript (sí, también se emplea para desarrollo web). FRDS dispone de dos bases de datos en la nube accesibles para clientes en tiempo real mediante sus respectivas APIs: Cloud Firestore y Realtime Database. Su principal diferencia es que Realtime Database es la BBDD original de Firebase y por tanto es más antigua aunque es igualmente una solución eficiente para apps de dispositivos móviles, mientras que Cloud Firestore es más reciente y tiene un modelo de datos nuevos y más intuitivo además de permitir una mayor escalabilidad.
+
+Podéis obtener más información en los siguientes enlaces:
+- Ficha del SGBD FRDS: https://db-engines.com/en/system/Firebase+Realtime+Database
+- Web oficial de FRDS: https://firebase.google.com/products/realtime-database?hl=es-419
+- Documentación técnica de FRDS: https://firebase.google.com/docs/database?hl=es-419
+
+Además os dejo un breve vídeo explicativo de Firebase: 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./img/ordi.png" alt="logo">
+            <nav>
+                <ul>
+                    <li class="Link"><a href="#">Servicios del aeropuerto</a></li>
+                    <li class="Link"><a href="#">Destinos</a></li>
+                    <li class="Link"><a href="#">Parking</a></li>
+                    <li><a href="#">Conocenos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <aside>
+            <h1>Regístrate en Ordi. Tendrás un perfil desde donde...</h1>
+            <ul>
+                <li>Reservar y facturar más rápido.</li>
+                <li>Acceder a promociones y descuentos.</li>
+                <li>Guardar tus búsquedas y planificar tus viajes.</li>
+                <li>Y conseguir otras ventajas.</li>
+            </ul>
+        </aside>
+        <section>
+            <h2>Recive en tu correo electrónico las mejores ofertas, promociones y noticias más destacadas de Ordi.</h2>
+            <form action="GET">
+                <p>Sólo con completar esta información podrás recibir periódicamente en tu buzón de correo electrónico: ofertas, promociones, noticias, etc, que le permitirán beneficiarse de ser un cliente de Ordi.</p>
+                <p>Si estas dado de alta y deseas gestionar tus preferencias, introduce tu dirección de correo.</p>
+                <fieldset>
+                    <label for="email">Correo electrónico: *</label>
+                    <input type="email" name="email" id="email" required><br>
+                    <label for="name">Nombre: *</label>
+                    <input type="text" name="name" id="name" required><br>
+                    <label for="date">Fecha de nacimiento: *</label>
+                    <input type="date" name="date" id="date" required><br>
+                    <label for="pass">Contraseña: *</label>
+                    <input type="password" name="pass" id="pass" required><br>
+                    <label for="confirm">Confirma tu password: *</label>
+                    <input type="password" name="confirm" id="confirm" required><br>
+                </fieldset>
+                <p>Cuantos más datos sobre tus preferencias nos facilites, más podremos ajustar a tus intereses las propuestas que le enviaremos</p>
+                <fieldset>
+                    <label for="number">Personas que viajan: </label>
+                    <select name="number" id="number" size="1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select><br>
+                    <label for="airport1">Aeropuerto de salida: </label>
+                    <select name="airport1" id="airport1" size="1">
+                        <option value="VLC">Valencia</option>
+                        <option value="BCN">Barcelona</option>
+                        <option value="MDR">Madrid</option>
+                    </select><br>
+                    <label for="airport2">Destino preferente 1: </label>
+                    <select name="airport2" id="airport2" size="1">
+                        <option value="LND">Londres</option>
+                        <option value="PRS">Paris</option>
+                        <option value="MLN">Milan</option>
+                    </select><br>
+                    <label for="airport3">Destino preferente 2: </label>
+                    <select name="airport3" id="airport3" size="1">
+                        <option value="LND">Londres</option>
+                        <option value="PRS">Paris</option>
+                        <option value="MLN">Milan</option>
+                    </select><br>
+                    <label for="others">Otros destinos:</label>
+                    <input type="text" name="others" id="others">
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" name="conditions" id="conditions">
+                    <label for="conditions">Acepto <a href="#">los terminos y condiciones</a> del funcionamiento de los boletines *</label>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <img src="./img/ordi.png" alt="logo">
+        <ul>
+            <li>2023 Ordi. Todos los derechos reservados</li>
+            <li>Terminos y condiciones generales de uso</li>
+            <li>Politica de privacidad</li>
+            <li>Contacto</li>
+            <li>Cookies</li>
+        </ul>
+    </footer>
+</body>
+</html>

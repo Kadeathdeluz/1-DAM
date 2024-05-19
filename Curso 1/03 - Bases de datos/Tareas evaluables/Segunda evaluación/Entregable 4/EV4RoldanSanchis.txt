@@ -1,0 +1,23 @@
+10/10
+
+Debería quitarte una décima en el 3, pero para que no digáis que siempre encuentro pegas.
+
+Crear y Poblar     2/2
+
+
+Actualizar         2/2
+
+Un poco raro tu criterio de parametrizar todo por variables excepto el $set, pero supongo que cada cual se organiza como quiere.
+
+Mineria            3/3
+
+1) No necesitas comprobar que gratificacion existe en realidad, no puede ser mayor que 500 si no existe.
+2) ¿Por qué incluyes un "separamos el vector si luego no lo vas a usar"? ¿Error de copia-pega?
+Se puede hacer separando y uniendo de nuevo o directamente con el acumulador en la proyección como has hecho.
+
+Contadores         2/2
+
+
+Borrado            1/1
+
+

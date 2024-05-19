@@ -1,0 +1,15 @@
+¡Buenas!
+
+Os dejo aquí el link con la explicación de la parte de shushito que tenéis que hacer.
+
+https://www.loom.com/share/09226ab836214b3a85ede11e80322e7f
+
+El ejercicio consiste en hacer una nueva página de Shushito, la parte del equipo, en donde encontraremos un canvas hecho con Grid en el que aparecen imágenes del equipo que forma parte del restaurante. Las imágenes están metidas con la propiedad background. Al pasar por encima de ellas tendremos una serie de animaciones que se activarán. 
+
+Debajo, tenemos una serie de citas que ha dicho cada uno de los miembros del equipo y cuyas imágenes, también introducidas con la propiedad background, se activarán. 
+
+Para finalizar hemos añadido dos imágenes más arriba del menú de navegación.
+
+Os dejo una imagen de como quedaría la página y en el enlace de arriba podéis ver las animaciones de cada una de las imágenes.
+
+¡Saludos!

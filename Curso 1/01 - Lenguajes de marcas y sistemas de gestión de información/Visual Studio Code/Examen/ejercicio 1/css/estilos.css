@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Permanent+Marker&display=swap');
+* {
+    font-family: 'Arial', 'sans-serif';
+    font-size: 16px;
+    text-align: center;
+}
+body {
+    background-color: bisque;
+}
+header {
+    background-color: #535353;
+    color: white;
+}
+fieldset {
+    background-color: aliceblue;
+}
+h1 {
+    font-family: 'Lilita One', 'sans-serif';
+    font-size: 30px;
+}
+h2, h2 > span {
+    font-family: 'Permanent Marker', 'sans-serif';
+    font-size: 24px;
+}
+.underRed {
+    text-decoration: underline;
+    color: red;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+input:required:valid {
+    border: 1px solid greenyellow;
+}
+.registro {
+    height: 30px;
+    width: 30%;
+    background-color: #535353;
+    color: white;
+    border-radius: 8px;
+}

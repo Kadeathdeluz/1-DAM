@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target</title>
+    <style>
+        
+p:target {
+  background-color: gold;
+}
+
+/* Add a pseudo-element inside the target element */
+p:target::before {
+  font: 70% sans-serif;
+  content: "►";
+  color: limegreen;
+  margin-right: 0.25em;
+}
+
+/* Style italic elements within the target element */
+p:target i {
+  color: red;
+}
+    </style>
+</head>
+<body>
+    <h3>Tabla de contenido</h3>
+<ol>
+  <li><a href="#p1">Primer parrafo</a></li>
+  <li><a href="#p2">Segundo párrafo</a></li>
+  <li>
+    <a href="#nowhere">
+      Este enlace no va a ningún sitio porque el target no existe
+    </a>
+  </li>
+</ol>
+
+<h3>Articulo divertido</h3>
+<p id="p1">
+  You can target <i>this paragraph</i> using a URL fragment. Click on the link
+  above to try out!
+</p>
+<p id="p2">
+  This is <i>another paragraph</i>, also accessible from the links above. Isn't
+  that delightful?
+</p>
+</body>
+</html>

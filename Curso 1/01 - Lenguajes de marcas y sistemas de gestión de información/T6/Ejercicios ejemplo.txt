@@ -1,0 +1,92 @@
+WFD -Ejercicio 1 -Deportistas
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<deportistas>
+	<deportista>
+		<deporte> Atletismo </deporte>
+		<nombre> Jesse Owens </nombre>
+	</deportista>
+	<deportista>
+	  <deporte> Natación </deporte>
+		<nombre>Mark Spitz</nombre>
+	</deportista>
+</deportistas>
+
+
+WFD -Ejercicio 2 -Películas
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas>
+	<pelicula>
+		<titulo>Con faldas y a lo loco</titulo>
+		<director>Billy Wilder</director>
+	</pelicula>
+	<pelicula>
+		<titulo>Sopa de ganso</titulo>
+		<director>Leo McCarey</director>
+	</pelicula>
+
+	<autor>Barto</autor>
+</peliculas>
+
+
+WFD -Ejercicio 3 -Texto
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<texto>
+	<titulo> XML explicado a los niños </titulo>
+	<párrafo> El 
+		<abreviatura>XML</abreviatura>
+		define cómo crear lenguajes de marcas.
+	</párrafo>
+	<párrafo> Las marcas se añaden a un documento de texto para añadir información.
+	</párrafo>
+	<link> www.example.org </link>
+</texto>
+
+
+WFD -Ejercicio 4 -Información geográfica
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<geografia_mundial>
+	<pais>
+		<nombre>España</nombre>
+		<continente> Europa </continente>
+		<capital> Madrid </capital>
+	</pais>
+</geografia_mundial>
+
+
+WFD -Ejercicio 5 -Programas
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<programas>
+	<programa nombre="Firefox" licencia="GPL" licencia2="MPL" />
+	<programa nombre="LibreOffice" licencia="LGPL" />
+	<programa nombre="Inkscape" licencia="GPL" />
+</programas>
+
+
+WFD -Ejercicio 6 -Mundiales de fútbol
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<mundiales-de-futbol>
+	<mundial>
+		<pais> España </pais>
+		<año> 1982 </año>
+	</mundial>
+</mundiales-de-futbol>
+
+
+WFD -Ejercicio 7 -Medios de transporte
+----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<medios_de_transporte>
+	<bicicleta velocidad_maxima="100 km/h" />
+	<patinete velocidad_maxima="50 km/h" />
+</medios_de_transporte>
+
+
+
+
+

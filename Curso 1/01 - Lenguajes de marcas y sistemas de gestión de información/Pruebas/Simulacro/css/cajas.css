@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.flexbox {
+    display: flex;
+}
+
+div.fila1 {
+    margin-right: 10px;
+    width: 30%;
+    height: 80px;
+    background-color: darkorchid;
+    text-align: center;
+    align-content: center;
+}
+
+#caja4 {
+    width: 100%;
+    background-color: aquamarine;
+    float: left;
+    text-align: left;
+}
+.fila2 {
+    width: 20%;
+    height: 100% ;
+    float: right;
+}
+
+#caja4_1 {
+    background-color: cornflowerblue;
+    border: 1px dotted black;
+    border-bottom: 2px dotted black;
+
+}
+#caja4_2 {
+
+}
+#caja4_3 {
+
+}

@@ -1,0 +1,488 @@
+
+SELECT nombre,oficina_rep,contrato 
+FROM repventas
+
+
+SELECT nombre,cuota,ventas 
+FROM repventas 
+WHERE num_empl=107
+
+
+SELECT AVG(ventas) 
+FROM repventas 
+
+
+SELECT nombre,contrato 
+FROM repventas 
+WHERE ventas>75000 
+
+
+SELECT ciudad,region,ventas 
+FROM oficinas
+
+
+SELECT ciudad,region,(ventas-objetivo) 
+FROM oficinas
+
+
+SELECT id_fab,id_producto, descripcion, (existencias*precio) 
+FROM productos
+
+
+SELECT nombre,cuota,(cuota+(0.03*ventas)) 
+FROM repventas
+
+
+SELECT nombre,MONTH(contrato),YEAR(contrato) 
+FROM repventas
+
+
+SELECT ciudad,’tiene ventas de’,ventas 
+FROM oficinas
+
+
+SELECT * FROM oficinas
+
+
+SELECT region FROM oficinas 
+
+
+SELECT DISTINCT region 
+FROM oficinas 
+
+
+SELECT ciudad,ventas,objetivo
+FROM oficinas
+WHERE ventas>objetivo
+
+
+
+SELECT nombre,ventas,cuota
+FROM repventas
+WHERE num_empl=105
+
+
+SELECT nombre,ventas
+FROM repventas
+WHERE director=104
+
+
+SELECT nombre FROM repventas
+WHERE contrato<’01/01/1998’ 
+
+
+SELECT ciudad,ventas,objetivo FROM oficinas 
+WHERE ventas<(0.75*objetivo)
+
+
+SELECT ciudad,region FROM oficinas 
+WHERE region<>’Centro’
+
+
+SELECT empresa,limite_credito
+FROM clientes 
+WHERE num_clie=2107
+
+
+SELECT nombre FROM repventas
+WHERE ventas>cuota 
+
+
+SELECT nombre FROM repventas
+WHERE ventas<=cuota 
+
+
+SELECT num_pedido,fecha_pedido,producto,importe 
+FROM pedidos
+WHERE fecha_pedido BETWEEN ‘01/10/1999’ AND ‘31/12/1999’
+
+
+SELECT num_pedido,importe
+FROM pedidos 
+WHERE importe BETWEEN 20000.00 AND 29999.99
+
+
+SELECT nombre,ventas,cuota FROM repventas 
+WHERE ventas NOT BETWEEN (0.75*cuota) AND (1.50*cuota)
+
+
+SELECT nombre,cuota,ventas FROM repventas 
+WHERE oficina_rep IN (11,13,22)
+
+
+SELECT num_pedido,rep,importe FROM pedidos 
+WHERE rep IN (101,103,107,109)
+
+
+SELECT empresa,limite_credito
+FROM clientes 
+WHERE empresa=’AFS S.A.’
+
+
+SELECT num_empl,nombre FROM repventas 
+WHERE nombre LIKE ‘% Martinez’
+
+
+SELECT nombre FROM repventas
+WHERE oficina_rep IS NULL 
+
+
+SELECT nombre FROM repventas
+WHERE oficina_rep IS NOT NULL 
+
+
+SELECT nombre,cuota,ventas
+FROM repventas 
+WHERE ventas<cuota OR ventas<30000.00
+
+
+SELECT nombre,cuotas,ventas
+FROM repventas 
+WHERE ventas<cuota AND ventas<20000.00
+
+
+SELECT nombre,cuota,ventas
+FROM repventas 
+WHERE ventas<cuota AND NOT ventas>5000.00
+
+
+SELECT nombre,edad
+FROM repventas 
+WHERE (ventas<cuota AND edad>45) OR ventas<5000.00
+
+*******************************************************************************+
+
+SELECT ciudad,region,ventas
+FROM oficinas 
+ORDER BY region,ciudad
+
+
+SELECT ciudad,region,ventas
+FROM oficinas 
+ORDER BY ventas DESC
+
+
+SELECT ciudad,region,(ventas-objetivo) 
+FROM oficinas 
+ORDER BY 3 DESC 
+
+
+SELECT id_fab,id_producto
+FROM productos 
+WHERE precio>2000
+
+
+SELECT DISTINCT fab,producto
+FROM pedidos 
+WHERE importe>30000
+
+
+
+SELECT id_fab,id_producto
+FROM productos 
+WHERE precio>2000 
+
+UNION 
+
+
+SELECT DISTINCT fab,producto 
+FROM pedidos
+WHERE importe>30000
+
+SELECT id_fab,id_producto
+FROM productos
+WHERE precio>2000 
+
+UNION ALL 
+
+
+SELECT DISTINCT fab,producto
+FROM pedidos
+WHERE importe>30000
+
+SELECT id_fab,id_producto
+FROM productos
+WHERE precio>2000 
+
+UNION 
+
+
+SELECT DISTINCT fab,producto
+FROM pedidos
+WHERE importe>30000 
+
+ORDER BY 2
+
+SELECT num_pedido,importe,empresa,limite_credito
+FROM pedidos,clientes
+WHERE clie=num_clie
+
+SELECT nombre,ciudad,region
+FROM repventas,oficinas 
+WHERE oficina_rep=oficina
+
+SELECT nombre,ciudad,region
+FROM repventas,oficinas 
+WHERE oficina_rep=oficina AND objetivo>=60000
+
+SELECT num_pedido,importe,descripcion 
+FROM pedidos,productos 
+WHERE fab=id_fab AND producto=id_producto
+
+SELECT num_pedido,importe,empresa,nombre
+FROM pedidos,clientes,repventas
+WHERE clie=num_clie AND rep=num_empl AND importe>25000
+
+SELECT num_pedido,importe,empresa,nombre
+FROM pedidos,clientes,repventas
+WHERE clie=num_clie AND rep_clie=num_empl AND importe>25000
+
+SELECT num_pedido,importe,empresa,nombre,ciudad
+FROM pedidos,clientes,repventas,oficinas
+WHERE clie=num_clie AND rep_clie=num_empl AND oficina_rep=oficina AND importe>25000
+
+SELECT num_pedido,importe,fecha_pedido,nombre
+FROM pedidos,repventas
+WHERE fecha_pedido=contrato
+
+SELECT nombre,cuota,ciudad,objetivo
+FROM repventas,oficinas
+WHERE oficina_rep=oficina and cuota>(0.5*objetivo)
+
+SELECT ciudad,ventas
+FROM oficinas
+WHERE ventas>objetivo
+
+SELECT nombre,ventas
+FROM repventas
+WHERE ventas>30000
+
+SELECT nombre,ventas,ciudad
+FROM repventas,oficinas
+WHERE oficina_rep=oficina 
+
+Error: Columna ‘ventas’ se encuentra en mas de una tabla. 
+
+SELECT nombre,repventas.ventas,ciudad
+FROM repventas,oficinas
+WHERE oficina_rep=oficina
+
+SELECT *
+FROM repventas,oficinas
+WHERE oficina_rep=oficina
+
+SELECT nombre,nombre
+FROM repventas,repventas
+WHERE director=num_empl 
+Error: Referencia duplicada a la tabla ‘repventas’. 
+
+SELECT nombre,nombre
+FROM repventas 
+WHERE director=num_empl 
+
+SELECT emps.nombre,dirs.nombre
+FROM emps, dirs 
+WHERE emps.director=dirs.num_empl 
+
+SELECT emps.nombre,dirs.nombre
+FROM repventas emps,repventas dirs
+WHERE emps.director=dirs.num_empl
+
+SELECT repventas.nombre,dirs.nombre
+FROM repventas,repventas dirs
+WHERE repventas.director=dirs.num_empl 
+
+SELECT repventas.nombre,repventas.cuota,dirs.cuota
+FROM repventas, repventas dirs
+WHERE repventas.director=dirs.num_empl AND repventas.cuota>dirs.cuota
+
+SELECT nombre,repventas.ventas,ciudad
+FROM repventas,oficinas
+WHERE oficina_rep=oficina 
+
+SELECT r.nombre,r.ventas,ciudad
+FROM repventas r,oficinas
+WHERE r.oficina_rep=oficina 
+
+
+SELECT SUM(cuota),SUM(ventas)
+FROM repventas
+
+SELECT SUM(importe)
+FROM pedidos,repventas
+WHERE nombre=’Belen Aguirre’ AND rep=num_empl 
+
+SELECT AVG(precio)
+FROM productos
+WHERE id_fab=’ACI’  
+
+SELECT AVG(importe)
+FROM pedidos
+WHERE clie=2103 
+
+SELECT MIN(cuota),MAX(cuota)
+FROM repventas
+
+SELECT MIN(fecha_pedido)
+FROM pedidos 
+
+SELECT MAX(100*ventas/cuota)
+FROM repventas 
+
+SELECT MIN(nombre),MAX(nombre)
+FROM repventas
+
+SELECT COUNT(num_clie)
+FROM clientes  
+
+SELECT COUNT(nombre)
+FROM repventas
+WHERE ventas>cuota 
+
+SELECT COUNT(importe)
+FROM pedidos
+WHERE importe>25000 
+
+SELECT COUNT(*)
+FROM pedidos
+WHERE importe>25000  
+
+SELECT importe,importe,100*importe/limite_credito,100*importe/cuota
+FROM pedidos,clientes,repventas
+WHERE clie=num_clie AND rep=num_empl 
+
+SELECT AVG(importe),SUM(importe),AVG(100*importe/limite_credito), AVG(100*importe/cuota)
+FROM pedidos,clientes,repventas
+WHERE clie=num_clie AND rep=num_empl 
+
+SELECT COUNT(*),COUNT(ventas),COUNT(cuota)
+FROM repventas
+
+SELECT SUM(ventas),SUM(cuota),SUM(ventas)-SUM(cuota),
+	SUM(ventas-cuota)
+FROM repventas
+
+SELECT COUNT(DISTINCT titulo)
+FROM repventas 
+
+SELECT COUNT(DISTINCT oficina_rep)
+FROM repventas
+WHERE ventas>cuota 
+
+SELECT rep,AVG(importe)
+FROM pedidos
+GROUP BY rep
+
+SELECT oficina_rep,MIN(cuota),MAX(cuota)
+FROM repventas
+GROUP BY oficina_rep 
+
+SELECT oficina_rep,COUNT(*)
+FROM repventas
+GROUP BY oficina_rep
+
+SELECT COUNT(DISTINCT num_clie),rep_clie
+FROM clientes
+GROUP BY rep_clie
+
+SELECT rep,clie,SUM(importe)
+FROM pedidos
+GROUP BY rep,clie
+
+SELECT num_empl,nombre,SUM(importe)
+FROM pedidos,repventas
+WHERE rep=num_empl
+GROUP BY num_empl,nombre
+
+SELECT rep,AVG(importe)
+FROM pedidos 
+GROUP BY rep 
+HAVING SUM(importe)>30000
+
+SELECT ciudad,SUM(cuota),SUM(repventas.ventas)
+FROM oficinas,repventas
+WHERE oficina=oficina_rep
+GROUP BY ciudad 
+HAVING COUNT(*)>=2
+
+SELECT descripcion,precio,existencias,SUM(cant)
+FROM productos,pedidos
+WHERE fab=id_fab AND producto=id_producto
+GROUP BY id_fab,id_producto, descripcion, precio, existencias 
+HAVING SUM(cant)>(0.75*existencias) 
+ORDER BY existencias DESC
+
+
+SELECT ciudad FROM oficinas
+WHERE ventas<
+(SELECT 0.5*SUM(cuota)
+FROM repventas
+WHERE oficina_rep=oficina) 
+
+SELECT ciudad FROM oficinas
+WHERE ventas<
+(SELECT 0.5*SUM(cuota)
+FROM repventas
+WHERE oficina_rep=oficina) 
+
+SELECT nombre FROM repventas
+WHERE cuota>=
+(SELECT objetivo
+FROM oficinas
+WHERE ciudad=’Alicante’) 
+
+SELECT empresa FROM clientes
+WHERE rep_clie=
+(SELECT num_empl
+FROM repventas
+WHERE nombre=’Belen Aguirre’) 
+
+SELECT descripcion,existencias FROM productos
+WHERE id_fab=’ACI’ AND existencias>
+(SELECT existencias
+FROM productos
+WHERE id_fab=’ACI’ AND id_producto=’41004’)
+
+SELECT nombre FROM repventas
+WHERE oficina_rep IN (SELECT oficina FROM oficinas
+WHERE ventas>objetivo) 
+
+SELECT nombre FROM repventas
+WHERE num_empl NOT IN 
+(SELECT rep_clie FROM clientes WHERE limite_credito<50000) 
+
+SELECT empresa FROM clientes
+WHERE num_clie IN 
+(SELECT DISTINCT clie FROM pedidos
+WHERE fab=’ACI’ AND producto LIKE ‘4100%’ AND fecha_pedido BETWEEN ‘01/01/2000’ AND ‘30/06/2000’) 
+
+SELECT DISTINCT descripcion
+FROM productos
+WHERE EXISTS 
+(SELECT num_pedido
+FROM pedidos
+WHERE fab=id_fab AND producto=id_producto AND importe>=25000) 
+
+SELECT empresa
+FROM clientes
+WHERE rep_clie=(SELECT num_empl FROM repventas WHERE nombre=’Soledad Martinez’) AND NOT EXISTS (SELECT *
+FROM pedidos WHERE clie=num_clie AND importe>3000) 
+
+SELECT ciudad
+FROM oficinas
+WHERE EXISTS (SELECT * FROM repventas WHERE oficina_rep=oficina AND cuota>(0.55*objetivo)) 
+
+SELECT nombre FROM repventas
+WHERE cuota<ANY (SELECT importe FROM pedidos WHERE rep=num_empl) 
+
+SELECT ciudad,objetivo FROM oficinas
+WHERE objetivo<ALL (SELECT ventas FROM repventas WHERE oficina_rep=oficina)
+
+SELECT empresa FROM clientes
+WHERE rep_clie IN (SELECT num_empl FROM repventas
+WHERE oficina_rep IN (SELECT oficina FROM oficinas WHERE region=’Centro’)) 
+
+SELECT nombre,AVG(importe) FROM repventas,pedidos
+WHERE num_empl=rep AND fab=’ACI’ GROUP BY nombre HAVING AVG(importe)>(SELECT AVG(importe) FROM pedidos)
+
+

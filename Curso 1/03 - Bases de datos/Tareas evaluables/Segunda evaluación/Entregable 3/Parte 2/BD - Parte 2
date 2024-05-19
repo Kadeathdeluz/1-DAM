@@ -1,0 +1,135 @@
+Entregable 3 – Bases de Datos
+
+4.1. Script 1
+Crea un procedimiento almacenado que muestre la id y circunscripción de las id_digital que han sido compradas por un partido determinado. El partido se recibe como parámetro y se almacena el número de personas que han sido compradas por el partido mediante otro parámetro.
+Ordena la consulta por circunscripción y muestra un mensaje de error si no se recibe un nombre de partido válido.
+
+--Inicio del Script 1
+
+DROP PROCEDURE IF EXISTS muestraIdsDigitalesCompradas;
+DELIMITER $$
+CREATE PROCEDURE muestraIdsDigitalesCompradas (
+    IN partidoC VARCHAR(4),
+    OUT numComprados INTEGER)
+BEGIN
+    IF (partidoC NOT IN (SELECT DISTINCT partido FROM senador)) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'NO EXISTE EL PARTIDO';
+    END IF;
+    SELECT COUNT(*) INTO numComprados
+    FROM id_digital i 
+    INNER JOIN senador s 
+    ON s.dni = i.senador_corrupto
+    WHERE i.comprado = 1 AND partidoC = s.partido;
+    SELECT i.id, i.circunscripcion
+    FROM id_digital i 
+    INNER JOIN senador s 
+    ON s.dni = i.senador_corrupto
+    WHERE i.comprado = 1 AND partidoC = s.partido
+    ORDER BY i.circunscripcion;
+END$$
+DELIMITER ;
+--Fin del Script 1
+
+4.2. Script 2
+Crea una función que reciba una id(digital) y un dni y devuelva 1 si la circunscripción de la id es la misma que la circ_presenta del segundo, que por obligación debe ser un senador o la función falla. Si las circunscripciones son diferentes, devuelve 0.
+Crea otra función que, usando la función anterior, devuelva el número de votos en vota_sen que no cumplen la restricción de que las circunscripciones sean iguales.
+
+--Inicio del Script 2
+--FUNCIÓN 1:
+
+DROP FUNCTION IF EXISTS mismaCircunscripcion;
+DELIMITER $$
+CREATE FUNCTION mismaCircunscripcion(
+    idDig VARCHAR(10),
+    dniSen VARCHAR(10))
+    RETURNS INTEGER
+    DETERMINISTIC
+    READS SQL DATA
+BEGIN
+    IF(dniSen NOT IN (SELECT DISTINCT dni FROM senador) ) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'DNI no corresponde a un Senador';
+    END IF;
+    
+    IF((SELECT COUNT(*) 
+        FROM id_digital i
+        INNER JOIN senador s
+        ON s.circ_presenta = i.circunscripcion
+        WHERE idDig = i.id AND s.dni = dniSen) = 1) THEN
+        RETURN 1;
+    ELSE 
+        RETURN 0;
+    END IF;
+END$$
+
+--FUNCIÓN 2:
+
+DROP FUNCTION IF EXISTS votosNoCumplen;
+CREATE FUNCTION votosNoCumplen()
+    RETURNS INTEGER
+    DETERMINISTIC
+    READS SQL DATA
+BEGIN
+    DECLARE resultado INTEGER;
+    SET resultado = (SELECT COUNT(*)
+FROM vota_sen v 
+INNER JOIN senador s 
+ON s.dni = v.dni_senador 
+INNER JOIN id_digital i 
+ON i.id = v.id_voto
+WHERE mismaCircunscripcion(i.id,s.dni) = 0);
+    RETURN resultado;
+END$$
+DELIMITER ;
+--Fin Script 2
+
+4.3. Script 3
+Crea los triggers necesarios para asegurar una participación (1,n) entre el centro y el interventor, es decir, que todos los centros tienen al menos un interventor asociado. Ignora las inserciones por motivos de simplicidad de gestión.
+
+--Inicio del Script 3
+--TRIGGER DELETE:
+
+DROP TRIGGER IF EXISTS borradoDeInterventor;
+DELIMITER $$
+CREATE TRIGGER borradoDeInterventor
+BEFORE DELETE ON interventor
+FOR EACH ROW
+BEGIN
+    IF((SELECT COUNT(*)
+        FROM centro c
+        WHERE c.id_centro NOT IN 
+            (SELECT i.centro_asignado
+             FROM interventor i
+             WHERE i.dni <> OLD.dni)) > 0)
+             THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'No se puede eliminar este Interventor. Todo Centro debe tener un Interventor asignado.';
+    END IF;
+END$$
+
+--TRIGGER UPDATE:
+
+DROP TRIGGER IF EXISTS actualizadoDeInterventor;
+CREATE TRIGGER actualizadoDeInterventor
+BEFORE UPDATE ON interventor
+FOR EACH ROW
+BEGIN
+    IF(OLD.centro_asignado <> NEW.centro_asignado)
+    AND
+    ((SELECT COUNT(*)
+        FROM centro c
+        WHERE c.id_centro NOT IN 
+            (SELECT i.centro_asignado
+             FROM interventor i
+             WHERE i.dni <> OLD.dni)) > 0)
+             THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'No se puede actualizar este Interventor. Todo Centro debe tener un Interventor asignado.';
+    END IF;
+END$$
+DELIMITER ;
+--Fin del Script 3
+
+4.4. Script 4
+Crea los triggers necesarios para convertir senador.num_votos en un campo calculado que se actualiza automáticamente cada vez que se modifica la tabla un vota_sen. Ten en cuenta todos los casos posibles.
+
+
+4.5. Script 5
+Crea los triggers necesarios para asegurar que los votos en vota_sen cumplan la restricción de que las circunscripciones de senador (circ_presenta) y votante sean iguales. Ten en cuenta todos los casos posibles.

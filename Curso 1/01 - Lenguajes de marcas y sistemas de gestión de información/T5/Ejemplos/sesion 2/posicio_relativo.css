@@ -1,0 +1,93 @@
+body {
+    background-color:hsl(0, 0%, 80%);
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  p {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  
+
+  p#m1 {
+    border: hsl(40, 40%, 35%) 4px solid;
+    background-color: hsl(40, 100%, 75%);
+    text-align: center;
+    width: 15%;
+  }
+  
+  p#m2 {
+    border: hsl(120, 40%, 35%) 4px solid;
+    background-color: hsl(120, 100%, 75%);
+    text-align: center;
+    width: 15%;
+  }
+  
+  p#m3 {
+    border: hsl(60, 64%, 55%) 4px solid;
+    background-color: hsl(60, 100%, 75%);
+    text-align: left;
+    width: 15%;
+  }
+  
+  p#m4 {
+    border: hsl(180, 25%, 70%) 4px solid;
+    background-color: hsl(180, 100%, 90%);
+    text-align: right;
+    width: 15%;
+  }
+  
+  p#m5 {
+    border: hsl(300, 15%, 70%) 4px solid;
+    background-color: hsl(300, 100%, 95%);
+    text-align: left;
+    width: 15%;
+  }
+  
+  p#m6 {
+    border: hsl(0, 15%, 45%) 4px solid;
+    background-color: hsl(0, 100%, 85%);
+    text-align: right;
+    width: 15%;
+  }
+  
+  
+
+ /* POSICIONES RELATIVAS*/
+
+ p#m1 {
+  position: relative;
+  top: 50px;
+}
+
+p#m2 {
+position: relative;
+top: 50px;
+}
+
+p#m3 {
+  position: relative;
+  right: -500px;
+}
+
+p#m4 {
+  position: relative;
+  top: 50px;
+}
+
+p#m5 {
+  position: relative;
+  top: 50px;
+}
+
+p#m6 {
+  position: relative;
+  top: 50px;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="transformacion.xsl" type="text/xsl"?>
+<ies nombre="CeedCv" web="http://www.ceedcv.es/">
+    <ciclos>
+        <ciclo horario="Nocturno">
+            <nombre>Administración de Sistemas Informáticos en Red</nombre>
+            <grado>Superior</grado>
+            <orden año="2012"></orden>
+        </ciclo>
+        <ciclo horario="Diurno">
+            <nombre>Desarrollo de Aplicaciones Web</nombre>
+            <grado>Superior</grado>
+            <orden año="2012"></orden>
+        </ciclo>
+        <ciclo horario="Diurno">
+            <nombre>Sistemas Microinformáticos y Redes</nombre>
+            <grado>Medio</grado>
+            <orden año="2009"></orden>
+        </ciclo>
+    </ciclos>
+</ies>

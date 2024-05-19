@@ -1,0 +1,27 @@
+/* Comenzamos siempre asegurando que usamos la BD */
+use MDBElecciones
+
+/* Creamos las distintas condiciones del filtro para contar los partidos que lo cumplan*/
+/* No tiene afiliados (no los muestra) */
+var j_cond_a1 = {"afiliados":{$exists:false}}
+
+/* No tienen afiliados (=0) */
+var j_cond_a2= {"afiliados":{ $eq:0}}
+
+/* No tienen afiliados (cumple alguna de las dos anteriores, OR lógica) */
+var j_cond_afiliados = {$or:[j_cond_a1,j_cond_a2]}
+
+/* Tiene votos (no importa si están vacíos, bienvenido a Corrupoly)*/
+var j_cond_v1 = {"votos": { $exists: true}}
+
+/* No tiene gratificacion (que te paguen 0 es una gratificación en Corrupoly) */
+var j_cond_v2 = {"votos.gratificacion": { $exists: false }}
+
+/* Cumple ambas condiciones a la vez (AND lógica) */
+var j_cond_votos = {$and:[j_cond_v1,j_cond_v2]}
+
+/* Filtro con todas las condiciones (OR lógica) */
+var j_filtro = {$or:[j_cond_afiliados,j_cond_votos]}
+
+/* Contamos cuántos partidos cumplen con las condiciones */
+db.Partidos.countDocuments(j_filtro);

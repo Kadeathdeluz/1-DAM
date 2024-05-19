@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+        display: flex;
+       
+      }
+     
+      #content div {
+        width: 120px;
+        border: 3px solid rgba(0,0,0,.2);
+      }
+     
+      .box {
+        flex-grow: 1; /*si es 0 no crecen, si es 1, crecen pero menos que el otro*/
+      }
+     
+      .box1 {
+        flex-grow: 4;
+      }
+     
+      </style>
+    
+</head>
+<body>
+    
+  <p>El ancho de los flex items es 120px.</p>
+  <p>Todos menos el contenedor amarillo tienen flex-grow a 0, por tanto este crecerá más que los demás</p>
+  <div id="content">
+    <div class="box" style="background-color:red;">A</div>
+    <div class="box" style="background-color:lightblue;">B</div>
+    <div class="box1" style="background-color:yellow;">C</div>
+    <div class="box" style="background-color:brown;">D</div>
+    <div class="box" style="background-color:lightgreen;">E</div>
+    <div class="box" style="background-color:blueviolet;">F</div>
+  </div>
+
+</body>
+</html>

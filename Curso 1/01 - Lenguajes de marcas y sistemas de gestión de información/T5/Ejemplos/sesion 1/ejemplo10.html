@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelementos</title>
+    <style>
+
+        .heart{
+            background-color: crimson;
+            width: 200px;
+            height: 200px;
+        
+            position: relative;
+            rotate: -45deg;
+            transform: translate(200px, 400px);
+        }
+     
+        .heart::before{
+            display: block;
+            content: '';
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+        
+            position: absolute;
+            left: 100px;
+            border-radius:  50%;
+           
+            }
+        
+            .heart::after{
+                display: block;
+                content: '';
+                width: 200px;
+                height: 200px;
+                background-color: crimson;
+        
+                position: absolute;
+                bottom: 100px;
+            border-radius:  50%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="heart">
+           
+        </div>
+
+      
+        
+        
+</body>
+</html>

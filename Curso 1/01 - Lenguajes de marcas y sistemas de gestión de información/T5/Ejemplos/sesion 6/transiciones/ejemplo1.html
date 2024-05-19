@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    position: relative;
+}
+.caja{
+  width: 180px;
+  height: 180px;
+  background-color: #30B037;
+  color: #FFF;
+  text-align: center;
+  line-height: 180px;
+  margin: 15px;
+  float: left;
+  font-size: 18px;
+  font-family: Arial;
+}
+.caja1{
+    background-color: #C0392B;
+    transition-property: all;  /*Podemos poner todas las propiedades o solo una*/
+    transition-duration: 5s;
+    transition-timing-function: ease; /* Valor por defecto*/
+    transition-delay:initial; /* Valor por defecto*/
+
+}
+.caja1:hover{
+  background-color: #3F51B5;
+  font-size: 20px;
+}
+.caja2{
+  background-color: #9B59B6;
+  transition: font-size 1s ease 0.75s;
+}
+.caja2:hover{
+  font-size: 28px;
+}
+.caja3{
+  background-color: #2980B9;
+  -webkit-transition: color 1s linear;
+  transition: color 1s linear;
+}
+.caja3:hover{
+  color: yellow;
+}
+.caja4{
+  background-color: #3498DB;
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+}
+.caja4:hover{
+  line-height: 300px;
+}
+.caja5{
+  border-radius: 0px;
+  background-color: #17A589;
+  -webkit-transition: 1s linear;
+  transition: 1s linear
+}
+.caja5:hover{
+  border-radius: 20px;
+}
+.caja6{
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  background-color: #F1C40F;
+}
+.caja6:hover{
+  -webkit-box-shadow: 10px 10px 14px 2px rgba(0,0,0,0.47);
+  box-shadow: 10px 10px 14px 2px rgba(0,0,0,0.47);
+}
+.caja7{
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  background-color: #E67E22;
+}
+.caja7:hover{
+  opacity: 0.3;
+}
+.caja8{
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  background-color: #95A5A6;
+}
+.caja8:hover{
+  border-style: solid;
+  border-color: #95A5A6;
+  border-color: #000;
+}
+.caja9{
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  background-color: #2C3E50;
+}
+.caja9:hover{
+  margin: 80px;
+}
+.caja10{
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  background-color: black;
+}
+.caja10:hover{
+  padding: 30px;
+}
+
+
+.caja11{
+  transition: 1.25s ease;
+  background-color: magenta;
+}
+.caja11:hover{
+  border-radius: 200px;
+}
+
+.caja12{
+  background-color:darksalmon;
+  transition: ease 1.25s 1s; /* Retardo de 0.75s cuando ponemos el cursor*/
+ /* Si lo pongo en hover directamente, al quitar el ratón vuelve a su estado instantáneamente.*/
+}
+.caja12:hover{
+  border-radius: 200px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="caja caja1">Background</div>
+        <div class="caja caja2">Font-size</div>
+        <div class="caja caja3">Color</div>
+        <div class="caja caja4">Line-height</div>
+        <div class="caja caja5">Border-radius</div>
+        <div class="caja caja6">Box-shadow</div>
+        <div class="caja caja7">Opacity</div>
+        <div class="caja caja8">Border</div>
+        <div class="caja caja9">Margin</div>
+        <div class="caja caja10">Padding</div>
+        <div class="caja caja11">Sin retraso</div>
+        <div class="caja caja12">Retraso</div>
+      </div>
+</body>
+</html>

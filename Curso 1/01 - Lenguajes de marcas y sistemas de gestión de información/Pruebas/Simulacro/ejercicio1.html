@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="css/ejercicio1.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <img src="img/lego.jpg" alt="">
+                    <a href="">Servicios del aeropuerto</a>
+                </li>
+                <li>
+                    <a href="">Destinos</a>
+                </li>
+                <li>
+                    <a href="">Parking</a>
+                </li>
+
+                <li>
+                    <a href="">Conócenos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+
+        <h3> Regístrate en Ordi. Tendrás un perfil desde donde... </h3>
+
+        <ul>
+            <li><a href=""><img src="img/lego.jpg" alt="">Reservar y facturar más rápido.</a></li>
+            <li><img src="img/animacion.jpg" alt=""><a href="">Acceder a promociones y descuentos.</a></li>
+            <li><img src="img/moviles.png" alt=""><a href="">Guardar tus búsquedas y planificar tus viajes.</a></li>
+            <li><img src="img/realidad_virtual.jpg" alt=""><a href="">Y conseguir otras ventajas.</a></li>
+        </ul>
+
+    </aside>
+
+    <section>
+
+        <p>Recibe en tu correo electrónico las mejores ofertas, promociones y noticias más destacadas de Ordi.</p>
+        <hr />
+
+        <p>Sólo con completar esta información podrás recibir periódicamente en tu buzón de correo electrónico
+            ofertas, promociones, noticias, etc, que te permitirán beneficiarte de ser un cliente de Ordi.</p>
+
+        <p>Si ya estás dado de alta y deseas gestionar tus preferencias, introduce tu dirección de correo.</p>
+
+        <form method="post" action="/send/">
+
+            <div>
+                <label for="correo">Correo electrónico: *</label>
+                <input type="text" id="correo" name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2-4}$" required>
+            </div>
+
+
+            <div>
+                <label for="nombre">Nombre: *</label>
+                <input type="text" id="nombre" name="nombre" pattern="[A-Za-]{2-50}" required>
+            </div>
+
+            <div>
+                <label for="fechanacimiento">Fecha de nacimiento: *</label>
+                <input type="date" id="fechanacimiento" name="fechanacimiento" required>
+            </div>
+
+            <div>
+                <label for="contraseña">Contraseña: *</label>
+                <input type="password" id="contraseña" nombre="contraseña" placeholder="Al menos 6 caracteres" required>
+            </div>
+
+
+            <div>
+                <label for="confirmar">Confirma tu password: *</label>
+                <input type="password" id="confirmar" nombre="confirmar" required>
+            </div>
+
+            <p>
+                Cuantos más datos sobre tus preferencias nos facilites, más podremos ajustar a tus intereses las
+                propuestas
+                que te enviaremos.
+            </p>
+
+            <div>
+                <label>Personas que viajan</label>
+
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+
+                </select>
+            </div>
+
+            <div>
+
+                <label>Aeropuerto de salida:</label>
+
+
+                <select>
+                    <option value="valencia">Valencia</option>
+                    <option value="castellon">Castellón</option>
+                    <option value="alicante">Alicante</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Destino preferente 1:</label>
+
+                <select>
+                    <option value="londres">Londres</option>
+                    <option value="paris">París</option>
+                    <option value="roma">Roma</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Destino preferente 2:</label>
+
+                <select>
+                    <option value="londres">Londres</option>
+                    <option value="paris">París</option>
+                    <option value="roma">Roma</option>
+
+                </select>
+
+            </div>
+
+            <div>
+                <label for="otros">Otros destinos:</label>
+                <input type="text" id="otros" name="otros">
+
+            </div>
+
+
+
+            <hr>
+
+            <div>
+
+                <input type="checkbox" id="condiciones" name="condiciones" required>
+                <label for="condiciones">Acepto los <a href="#">términos y condiciones</a> del funcionamiento de los
+                    boletines *</label>
+
+            </div>
+
+            <div class="continuar">
+
+                <button type="submit">Continuar</button>
+
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+
+        <p>2023 &copy; Ordi. Todos los derechos reservados. </p>
+
+        <a href="#">Términos y condiciones de uso.</a>
+
+        <a href="#">Política de privacidad</a>
+
+        <a href="#">Contacto</a>
+
+        <a href="#">Cookies</a>
+
+
+    </footer>
+
+</body>
+
+</html>

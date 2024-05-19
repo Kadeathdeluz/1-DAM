@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uf12addressapp.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arxiu">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Obrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Guardar" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAsFile" text="Guardar com" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Eixir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editar">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Nou" />
+                  <MenuItem mnemonicParsing="false" text="Editar" />
+              <MenuItem mnemonicParsing="false" text="Eliminar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#sobreMi" text="Sobre mi" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,20 @@
+/* Nos aseguramos de usar la BD */
+use MDBElecciones
+
+/* Proyección de siglas y nombres */
+var j_proyec = {"_id":0, "siglas":1,"nombre":1}
+
+/* El partido NO tiene votos */
+var j_cond_votos = {"votos":{$exists:false}}
+
+/* No votados en Ladronia */
+var j_cond_ladronia = {"votos.circunscripcion":{$ne:"Ladronia"}}
+
+/* No tienen votos o no han sido votados en Ladronia */
+var j_filtro = {$or:[j_cond_votos,j_cond_ladronia]}
+
+/* Listamos las siglas y los partidos que cumplen el filtro */
+db.Partidos.find(j_filtro,j_proyec)
+
+/* Borramos los partidos que cumplen con el filtro */
+db.Partidos.deleteMany(j_filtro)

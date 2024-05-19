@@ -1,0 +1,16 @@
+div {
+  width: 400px;
+  height: 200px;
+}
+.lineal {
+  background-color: grey; /*en caso de no soportar el gradiente*/
+  background-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    purple
+  );
+}

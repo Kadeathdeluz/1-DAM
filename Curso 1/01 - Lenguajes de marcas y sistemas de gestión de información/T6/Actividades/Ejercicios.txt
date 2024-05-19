@@ -1,0 +1,119 @@
+Ejercicio 1:
+--------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<nombre>
+	<nombre_pila>Juan Martín</nombre_pila>
+	<apellidos>Fernández Moreno de la Vega</apellidos>
+</nombre>
+<!-- todo ok -->
+--------------------------------------------------------------------------
+
+Ejercicio 2:
+--------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<mensaje> Pedido para el señor 
+	<destinatario> Juan Delgado Martínez </destinatario>
+. El pedido se compone de 
+	<articulo_pedido> una bicicleta
+	A2023 </articulo_pedido>
+. A entregar en la 
+	<direccion_entrega> calle Barco 4, tercer piso, letra A
+	</direccion_entrega>
+, el día 
+	<fecha_entrega> 19-5-2000 </fecha_entrega>
+.
+</mensaje>
+--------------------------------------------------------------------------
+
+Ejercicio 3:
+--------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<mensaje>
+	<remitente nombre="Alfredo Reino" email="alf@ibium.com"/>
+	<destinatario nombre="Bill Clinton" email="president@whitehouse.gov"/>
+	<asunto> Hola Bill </asunto>
+	<texto>
+		<parrafo> ¿Hola, qué tal? ...
+		</parrafo>
+		<parrafo> Hace mucho tiempo que no escribes. A ver si llamas y quedamos pronto.
+		</parrafo>
+		<parrafo> Un saludo.
+		</parrafo>
+	</texto>
+</mensaje>
+--------------------------------------------------------------------------
+
+Ejercicio 4:
+--------------------------------------------------------------------------
+Estructura en árbol:
+<carta>
+	<desayuno>
+		<nombre></nombre>
+		<precio></precio>
+		<descripcion></descripcion>
+		<calorias></calorias>
+	</desayuno>
+</carta>
+
+XML con info:
+<!-- --------------------------------------- -->
+<?xml version="1.0" encoding="UTF-8"?>
+<carta>
+	<desayuno>
+		<nombre> Gofres Belgas </nombre>
+		<precio> 5.95 </precio>
+		<descripcion> Dos de nuestros famosos gofres belgas con abundante sirope </descripcion>
+		<calorias> 650 </calorias>
+	</desayuno>
+	<desayuno>
+		<nombre> Gofres Belbas con fresas </nombre>
+		<precio> 7.95 </precio>
+		<descripcion> Ligeros gofres belgas cubiertos de fresas y nata montada </descripcion>
+		<calorias> 900 </calorias>
+	</desayuno>
+	<desayuno>
+		<nombre> Gofres Belbas con frutas del bosque </nombre>
+		<precio> 8.95 </precio>
+		<descripcion> Ligeros gofres belgas cubiertos de frutos del bosque y nata montada </descripcion>
+		<calorias> 900 </calorias>
+	</desayuno>
+	<desayuno>
+		<nombre> Tostada Francesa </nombre>
+		<precio> 4.50 </precio>
+		<descripcion> Dos gruesas rebanadas de nuestro pan francés casero </descripcion>
+		<calorias> 600 </calorias>
+	</desayuno>
+	<desayuno>
+		<nombre> Desayuno de la casa </nombre>
+		<precio> 6.95 </precio>
+		<descripcion> Dos huevos, bacon o salchicha, tostada y patatas fritas </descripcion>
+		<calorias> 950 </calorias>
+	</desayuno>
+</carta>
+
+--------------------------------------------------------------------------
+
+Ejercicio 5:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+
+Ejercicio 6:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+
+Ejercicio 7:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+
+Ejercicio 8:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+
+Ejercicio 9:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------

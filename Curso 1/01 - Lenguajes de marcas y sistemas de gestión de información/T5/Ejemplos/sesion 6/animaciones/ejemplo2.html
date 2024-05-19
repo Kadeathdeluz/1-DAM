@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color:#E7E9EB;
+}
+#myDIV {
+  background-color:#FFFFFF;
+  width: 100%;
+  height: 300px;
+}
+
+#uno {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 3s 3;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
+#dos {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: aloloco 3s infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
+
+
+#myDIV div:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 200px;}
+}
+@keyframes myothermove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+@keyframes mylastmove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}
+
+@keyframes mycombination {
+  from {background-color: red;}
+  to {background-color: blue;}
+  from {left: 0px;}
+  to {left: 200px;}
+}
+
+@keyframes aloloco {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+
+@keyframes cambiotamaño {
+  0%   {background: red; left: 0px; top: 0px; scale: 3; rotate: 45deg;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+
+</style>
+</head>
+<body>
+
+<h1>PROPIEDAD ANIMACIÓN</h1>
+
+<div id="myDIV">
+  <div id="uno"></div>
+  <div id="dos"></div>
+</div>
+
+
+</body>
+</html>

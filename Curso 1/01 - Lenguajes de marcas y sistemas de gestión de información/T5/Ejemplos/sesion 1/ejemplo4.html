@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border:1px solid black;
+        }
+        tr:first-child{ /*indico el elemento, es el primer tr hijo*/
+            color:red;
+        }
+       
+        /*table tr:nth-child(4){
+            color:blueviolet;
+        }
+   
+        tr :first-child{  /*No indico que elemento tiene que ser, coge el primer hijo del descendiente
+            color:blue;
+        }    */
+
+        tr:nth-child(even){
+            color:yellow;
+        }
+        tr:nth-child(odd){
+            color:green;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <table>
+<tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+</tr>
+<tr><td>4</td>
+    <td>5</td>
+    <td>6</td>
+</tr>
+<tr><td>7</td>
+    <td>8</td>
+    <td>9</td>
+</tr>
+<tr><td>10</td>
+    <td>11</td>
+    <td>12</td>
+</tr>
+    </table>
+    
+</body>
+</html>

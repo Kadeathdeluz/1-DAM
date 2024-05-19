@@ -1,0 +1,9 @@
+https://www.abrirllave.com/xml/ejercicio-ciudades-de-paises.php
+
+https://www.abrirllave.com/xml/ejercicio-hechos-historicos.php
+
+https://www.mclibre.org/consultar/xml/ejercicios/documentos-bien-formados.html
+
+https://www.mclibre.org/consultar/xml/ejercicios/dtd.html
+
+https://www.abrirllave.com/dtd/ejercicios-resueltos.php

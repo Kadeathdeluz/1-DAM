@@ -1,0 +1,52 @@
+#galeria{    
+    overflow: hidden;
+    width: 1400px;
+    margin: 20px;
+}
+#galeria div{
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    float:left;
+   
+}
+#imagen1{
+    background-image: url(../img/logoceed.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+#imagen2{
+    background-image: url(../img/logoceed.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+#imagen3{
+    background-image: url(../img/logoceed.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+
+}
+
+#imagen4{
+    background-image: url(../img/logoceed.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+
+}
+
+#imagen5{
+    background-image: url(../img/logoceed.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+}
+
+#imagen6{
+    background-image: url(../img/logoceed.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+}

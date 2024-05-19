@@ -1,0 +1,72 @@
+Ejercicio 3.1.
+
+//Falta corregir dos errores en los datos con dos UPDATE diferentes (eliminar el espacio de Barcelona y Fenlabrada -> Fuenlabrada)
+SELECT DISTINCT Ciudad 
+FROM Clientes;
+
+
+Ejercicio 3.2.
+
+SELECT COUNT(*) AS Num_de_Clientes 
+FROM Clientes;
+
+
+Ejercicio 3.3.
+
+SELECT Nombre, CantidadEnStock, PrecioProveedor 
+FROM Productos 
+WHERE Gama = "Herramientas" 
+ORDER BY Nombre;
+
+
+Ejercicio 3.4.
+
+SELECT Nombre, (CantidadEnStock * PrecioProveedor) AS Importe 
+FROM Productos 
+WHERE Gama = "Herramientas"
+ORDER BY (CantidadEnStock * PrecioProveedor), Nombre; //ORDER BY 2, Nombre
+
+Ejercicio 3.5.
+
+SELECT Nombre, (PrecioVenta - PrecioProveedor) AS Beneficio 
+FROM Productos 
+WHERE Gama = "Herramientas";
+
+Ejercicio 3.6.
+
+SELECT MAX(PrecioVenta - PrecioProveedor) AS Beneficio 
+FROM Productos 
+WHERE CantidadEnStock > 0;
+
+Ejercicio 3.7.
+
+SELECT CodigoPedido, FechaPedido, CodigoCliente, FechaEsperada 
+FROM Pedidos 
+WHERE FechaEntrega > FechaEsperada
+ORDER BY FechaPedido;
+
+Ejercicio 3.8.
+
+//Podemos añadir un AS al inicio para darle un nombre significativo al resultado
+SELECT COUNT(*) 
+FROM Pedidos 
+WHERE CodigoCliente = 30;
+
+Ejercicio 3.9.
+
+//Los pedidos con CodigoPedido 83, 27 y 67 son los que cumplen la condición
+SELECT CodigoPedido, FechaEntrega, Estado 
+FROM Pedidos
+WHERE Estado = "Entregado" AND FechaEntrega IS NULL //El orden de las condiciones no es relevante
+ORDER BY FechaPedido;
+
+Ejercicio 3.10.
+
+SELECT NumeroLinea, CodigoPedido, CodigoProducto, Cantidad, PrecioUnidad
+FROM DetallePedidos 
+WHERE CodigoPedido = 10
+ORDER BY NumeroLinea;
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+        .caja{
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            outline: 1px solid green;
+            flex-shrink: 2;
+        }
+        
+        .contenedor{
+            outline: 2px solid red;
+            display: flex;
+            }
+
+        .caja6{
+            order:-1;
+        }
+        .caja2{
+            order:2;
+        }
+        .caja8{
+            order:3;
+        }
+        .caja4{
+            order:6;
+        }/*
+        .caja8{
+            order:3;
+        }*/
+        
+        
+        </style>
+    </head>
+    <body>
+        
+        <div class="contenedor">
+            <div class="caja">1</div>
+            <div class="caja caja2">2</div>
+            <div class="caja">3</div>
+            <div class="caja caja4">4</div>
+            <div class="caja">5</div>
+            <div class="caja caja6">6</div>
+            <div class="caja">7</div>
+            <div class="caja caja8">8</div>
+            <div class="caja">9</div>
+        </div>
+    </body>
+        
+</html>

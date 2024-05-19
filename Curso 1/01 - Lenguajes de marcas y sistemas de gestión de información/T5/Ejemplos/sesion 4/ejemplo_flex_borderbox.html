@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+/*
+https://stackoverflow.com/questions/37353792/flex-basis-and-box-sizing
+https://stackoverflow.com/questions/34753491/how-does-flex-shrink-factor-in-padding-and-border-box
+
+*/
+.horizontal-layout {
+  display: flex;
+  flex-direction: row;
+}
+header > span {
+  flex: 1 0 100%;
+}
+header > .button {
+  background-color: grey;
+}
+header > .app-name {
+  background-color: orange;
+}
+header#with-border-padding > span {
+  box-sizing: border-box; /* this is not useful at all */
+}
+header#with-border-padding > .button {
+  border: 1px solid black;
+  padding-left: 5px;
+}
+    </style>
+</head>
+<body>
+    <header class="horizontal-layout">
+        <span class="button">A</span>
+        <span class="app-name">B</span>
+        <span class="button">C</span>
+      </header>
+      
+      <header id="with-border-padding" class="horizontal-layout">
+        <span class="button">A</span>
+        <span class="app-name">B</span>
+        <span class="button">C</span>
+      </header>
+</body>
+</html>

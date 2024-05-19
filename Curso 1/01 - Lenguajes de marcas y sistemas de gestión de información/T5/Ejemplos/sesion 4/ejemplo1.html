@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            padding:0;
+        }
+        
+        .caja{
+            width: 300px;
+            height: 300px;
+           
+            flex:  1 0 250px ; /* flex-grow = 1  flex-shrink = 0, flex-basis = 250*/
+            /*flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 250px;*/
+            border: 3px solid black;
+            outline: 1px solid green;
+        }
+        
+        .contenedor{
+            width: 900px;
+            height: 900px;
+            outline: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            
+            }
+        
+        
+        </style>
+    </head>
+    <body>
+        
+        <div class="contenedor">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+            <div class="caja">6</div>
+            <div class="caja">7</div>
+            <div class="caja">8</div>
+            <div class="caja">9</div>
+        </div>
+    </body>
+        
+</html>

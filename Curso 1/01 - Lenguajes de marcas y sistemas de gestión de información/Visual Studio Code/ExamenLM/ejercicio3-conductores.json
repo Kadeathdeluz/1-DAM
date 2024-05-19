@@ -1,0 +1,32 @@
+{
+    "conductores": [
+        {
+            "permiso": "B",
+            "nombre": "Jose",
+            "puntos": 12,
+            "antigüedad": 20,
+            "automóviles": [
+                {
+                    "marca": "Seat",
+                    "modelo": "Arosa"
+                },
+                {
+                    "marca": "Ford",
+                    "modelo": "Fiesta"
+                }
+            ]
+        },
+        {
+            "permiso": "A",
+            "nombre": "Claudia",
+            "puntos": 15,
+            "antigüedad": 30,
+            "automóviles": [
+                {
+                    "marca": "Derbi",
+                    "modelo": "Variant"
+                }
+            ]
+        }
+    ]
+}

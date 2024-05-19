@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    height: 3em;
+    width: 100%;
+    background-color: rgb(255, 229, 85);
+}
+
+nav ul {
+    display: grid;
+    grid-template-areas: "perros gatos peces";
+    position: absolute;
+    left: 50%;
+    top: 1.5em;
+    transform: translate(-50%,-50%);
+}
+
+li {
+    list-style-type: none;
+    padding-inline: 10px;
+}
+
+nav ul li:nth-child(1) a{
+    grid-area: "perros";
+}
+
+nav ul li:nth-child(2){
+    grid-area: "gatos";
+}
+nav ul li:nth-child(3) {
+    grid-area: "peces";
+}
+
+.padre {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.hijo {
+
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+}

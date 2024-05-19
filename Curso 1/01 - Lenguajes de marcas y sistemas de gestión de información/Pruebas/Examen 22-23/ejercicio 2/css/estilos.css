@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+.linea1 > div{
+    float: left;
+    background-color: blueviolet;
+    width: 30%;
+    height: 50px;
+    text-align: center;
+    margin-right: 5px;
+}
+p{
+    padding: 5px;
+}
+.linea2 > div{
+    margin-top: 5px;
+    float: left;
+}
+.cuarenta{
+    width: 40%;
+}
+div.masespacio{
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+.sesenta{
+    width: 60%;
+    float: left;
+}
+div.bordepuntos{
+    float: left;
+    width: 29%;
+    background-color: aqua;
+    border: 1px dotted black;
+    height: 60px;
+}
+div.sombra{
+    height: 60px;
+    float: left;
+    width: 28%;
+    background-color: chartreuse;
+    text-shadow: 1px 1px 1px;
+}
+div.dashed{
+    height: 60px;
+    background-color: cadetblue;
+    width: 28%;
+    float: left;
+    border: 1px dashed black;
+    border-bottom: 2px solid black;
+}
+div.dashed > p{
+    text-decoration: overline;
+}
+.cincuenta{
+    float: left;
+    width: 50%;
+}
+.caja5 {
+    margin-top: 5px;
+    float: left;
+    width: 60%;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    height: 90px;
+}
+.cajainvisible{
+    float: left;
+}
+.caja51{
+    float: left;
+    width: 50%;
+    margin-top: 5px;
+    background-color: #bb00bb;
+    box-shadow: 15px 10px grey;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.linea4 > div{
+    float: left;
+    background-color:  #ff0064;
+    width: 30%;
+    height: 80px;
+    margin-right: 5px;
+}
+.linea4 > div.caja7{
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

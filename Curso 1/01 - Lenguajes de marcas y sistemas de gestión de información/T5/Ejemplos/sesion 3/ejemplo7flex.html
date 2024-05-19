@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>align-items</title>
+  <style>
+    #container > div {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(-45deg, #78ff8c, #b4ffc8);
+}
+
+#container > div > div {
+  margin: 2px;
+  width: 60px;
+  min-height: 60px;
+  background: linear-gradient(-45deg, #788cff, #b4c8ff);
+}
+
+#flex-start {
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+
+#center {
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+#flex-end {
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+
+#space-between {
+  -webkit-align-content: space-between;
+  align-content: space-between;
+}
+
+#space-around {
+  -webkit-align-content: space-around;
+  align-content: space-around;
+}
+
+#stretch {
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+#initial{
+  align-content: initial;
+}
+  </style>
+</head>
+<body>
+  <div id="container">
+ 
+    <p>align-content: flex-start</p>
+    <div id="flex-start">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>align-content: center</p>
+    <div id="center">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>align-content: flex-end</p>
+    <div id="flex-end">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>align-content: space-between</p>
+    <div id="space-between">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>align-content: space-around</p>
+    <div id="space-around">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>align-content: stretch</p>
+    <div id="stretch">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+   
+  </div>
+</body>
+</html>
+

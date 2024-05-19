@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Holy Grail Layout solved by flexbox </title>
+
+		<meta name="viewport" content="initial-scale=1.0; width=device-width">
+
+		<style>
+
+* {
+	padding:0;
+	margin:0
+}
+
+        header{
+            background-color: coral;
+        }
+        nav{
+            background-color: palevioletred;
+          }
+        footer{
+            background-color: gray;
+
+        }
+
+
+			/**
+			 * Flex things:
+			 * — Mobile first
+			 * — Responsive
+			 */
+			.holy-grail {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				margin:0;
+			}
+            .holy-grail-body {
+                display: flex;
+				flex: 1 0 auto;
+				flex-direction: row;
+			}
+			.holy-grail-content {
+				flex: 1 1 auto;
+                background-color: blueviolet;
+			}
+			.hg-sidebar {
+				flex: 0 0 auto;
+                background-color: aqua;
+			}
+		</style>
+
+	</head>	
+	<body class="holy-grail">
+
+		<header>
+			<p>1</p>
+		</header>
+		<nav>
+			<p>2</p>
+        </nav>
+		<div class="holy-grail-body">
+
+			<section class="holy-grail-content">
+				<p>4</p>
+			</section>
+
+			<div class="holy-grail-sidebar-2 hg-sidebar">
+				<p>Sidebar 2dgdgdgdgdgdgdgd</p>
+			</div>
+
+		</div>
+
+		<footer>
+			<p>Footer</p>
+		</footer>
+	</body>
+</html>

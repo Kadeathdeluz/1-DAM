@@ -1,0 +1,159 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+header {
+    background-color: maroon;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+
+header ul li a {
+    text-decoration: none; /*para que no aparezcan los enlaces subrayados*/
+    color: black;
+}
+
+
+header ul li a:hover { /*no dejar espacios entre : y hover*/
+    color: white;
+    text-decoration: underline;
+}
+
+
+header ul li {
+    display: inline-block;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+body {
+    height: 70vh; /*importante viewport height: ;*/
+}
+
+body h2 {
+    font-weight: normal;
+    color: maroon;
+}
+
+aside {
+    width: 30%;
+    float: left;
+    height: 100%; /*importante*/
+    padding-top: 20px;
+    border-right: 4px solid maroon;
+}
+
+
+aside h2 {
+    margin-bottom: 30px;
+}
+
+aside li {
+    margin: 10px;
+    padding-left: 5px;
+}
+
+
+section {
+    width: 100%;
+    padding: 10px;
+    /*position: relative;*/
+}
+
+section > :first-child{
+    font-size: 18px;
+}
+
+/*section p {
+    padding: 10px;
+}*/
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-width: 1px;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section form div {
+    text-align: left;
+    width: 500px;
+}
+
+form div label {
+    display: inline-block; /*se comporta como un elemento de bloque y de línea a la vez*/
+    width: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+/*section form label {
+    float: left;
+}*/
+
+button {
+    background-color: maroon;
+    color: white;
+    border-radius: 4px;
+    padding: 6px 10px;
+    /*position: absolute;
+    bottom: 0;
+    right: 0;*/
+}
+
+hr {
+
+    background-color: brown;
+}
+
+ .continuar {
+    text-align: right;
+    width: 100%;
+}
+
+.condiciones {
+    width: 95%;
+}
+
+
+.hola {
+    width: 100%;
+    padding-left: 10px;
+}
+
+footer {
+    background-color: maroon;
+    clear: both;
+    height: 100px;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

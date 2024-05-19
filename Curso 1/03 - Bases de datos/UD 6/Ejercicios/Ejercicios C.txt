@@ -1,0 +1,51 @@
+Ejercicio 1
+
+SELECT NombreCliente 
+FROM Clientes C, Pedidos P
+WHERE C.CodigoCliente = P.CodigoCliente
+GROUP BY P.CodigoCliente
+ORDER BY C.NombreCliente;
+
+Ejercicio 2
+
+SELECT CodigoPedido, SUM(Cantidad * PrecioUnidad) AS 'Importe Total'
+FROM DetallePedido
+WHERE CodigoPedido BETWEEN 100 AND 110
+GROUP BY CodigoPedido
+ORDER BY CodigoPedido;
+
+Ejercicio 3
+Mostrar todos los pedidos del cliente “Beragua” con el importe total de cada pedido,
+ordenado por el número de pedido.
+SELECT CodigoPedido, SUM(Cantidad * PrecioUnidad) AS 'Importe Total'
+FROM DetallePedido
+WHERE 
+GROUP BY CodigoPedido
+ORDER BY CodigoPedido;
+
+Ejercicio 4
+Mostrar el nombre del cliente y la suma total del importe de todos los pedidos realizados
+por él, ordenado por el nombre del cliente.
+
+Ejercicio 5
+Mostrar el nombre del cliente, el número de pedido, la base imponible del pedido, el
+importe del IVA (21%) y el total del pedido, para los pedidos 100, 103, 106 y 109.
+
+Ejercicio 6
+Mostrar el nombre del producto y el total de unidades pedidas, de los productos de los
+cuáles se hayan pedido más de 450 unidades, ordenados de mayor a menor por el número
+de unidades.
+
+
+Ejercicio 7
+Mostrar el nombre del producto y el precio de venta del producto más caro que tengamos.
+
+Ejercicio 8
+Calcular el importe máximo de un pedido y el importe mínimo de un pedido de todos los
+pedidos realizados por los clientes.
+
+Extra: Cantidad de productos en cada gama
+
+SELECT Gama, COUNT(*) AS "Cantidad producto"
+FROM Productos
+GROUP BY Gama;

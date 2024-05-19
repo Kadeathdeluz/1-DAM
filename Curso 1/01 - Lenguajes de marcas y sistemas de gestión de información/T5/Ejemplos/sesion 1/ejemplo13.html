@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin:10px;
+        }
+        .caja1 {
+
+            background: grey;
+            /*transform-origin: 0% 0%;*/
+            transform: translate(50px, 0);
+        }
+        .caja2 {
+
+            background: blueviolet;
+            /*transform-origin: 0% 0%;*/
+            transform: rotate(45deg);        }
+
+            .caja3 {
+            background: red;
+            /*transform-origin: 0% 0%;*/
+            transform: scale(60%);        }
+
+            .caja4 {
+            background: green;
+            /*transform-origin: 0% 0%;*/
+            transform: skew(10deg) ;        }
+
+            .caja5 {
+            background: palevioletred;
+            /*transform-origin: 0% 0%;*/
+            transform: translate(50px, 0) rotate(45deg) scale(60%) skew(10deg) ;
+            }
+
+</style>
+    </style>
+</head>
+<body>
+    <div class="caja1">Caja 1</div>
+    <div class="caja2">Caja 2</div>
+    <div class="caja3">Caja 3</div>
+    <div class="caja4">Caja 4</div>
+    <div class="caja5">Caja 4</div>
+</body>
+</html>

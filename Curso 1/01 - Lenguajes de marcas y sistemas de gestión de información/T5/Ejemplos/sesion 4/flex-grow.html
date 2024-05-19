@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<head>
+
+    <style>
+        .flex-container {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          /*Probar el comportamiento de crecimiento con wrap*/
+          /*justify-content: space-around;
+          flex-flow: row wrap;*/
+  
+        }
+        /*Si quitamos esto, ocupan el tamaño pero no crecen!*/
+        
+        .flex-item:nth-child(1) { flex-grow: 1; }
+        .flex-item:nth-child(2) { flex-grow: 1; }
+        .flex-item:nth-child(3) { flex-grow: 4; }
+        .flex-item:nth-child(4) { flex-grow: 1; }
+        .flex-item:nth-child(5) { flex-grow: 1; }
+        
+        .flex-item {
+          background: tomato;
+          border: 3px solid rgba(0,0,0,.2);
+          line-height: 100px;
+          color: white;
+          width: 100px;
+          height: 100px; /*No hace caso al tamaño */
+          font-weight: bold;
+          font-size: 2em;
+          text-align: center;
+        }
+          </style>
+    </head>    
+        <body>
+         
+        
+        <div class="flex-container">
+          <div class="flex-item">1</div>
+          <div class="flex-item">2</div>
+          <div class="flex-item">3</div>
+          <div class="flex-item">4</div>
+          <div class="flex-item">5</div>
+        </div>
+        
+        
+           
+          </div>
+        </body>
+        
+</html>

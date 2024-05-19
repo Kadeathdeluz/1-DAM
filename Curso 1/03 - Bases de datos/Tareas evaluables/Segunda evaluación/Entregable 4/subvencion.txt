@@ -1,0 +1,51 @@
+/* Utilizamos la BD */
+use MDBElecciones
+
+/* Creamos las variables necesarias para filtros, proyecciones y updates */
+/* Partidos que muestren afiliados */
+var j_cond_exists = {"afiliados":{$exists:true}}
+
+/* Partidos que NO muestren afiliados */
+var j_cond_not_exists = {"afiliados":{$exists:false}}
+
+/* Partidos con MENOS de 5000 afiliados */
+var j_cond_caso1 = {"afiliados":{$lt:5000}}
+
+/* Partidos ENTRE 5000 y 10000 afiliados (mayor o igual que 5000 y menor o igual que 10000) */
+var j_cond_caso2 = {$and:[{"afiliados":{$gte:5000}},{"afiliados":{$lte:10000}}]}
+
+/* Partidos con MÁS de 10000 afiliados */
+var j_cond_caso3 = {"afiliados":{$gt:10000}}
+
+
+/* Un filtro para cada tipo de subvencion (básicamente que muestre afiliados y una condición para cada caso) */
+/* Muestran afiliados y son menos de 5000 (usando AND lógica) */
+var j_filtro1 = {$and:[j_cond_exists,j_cond_caso1]}
+
+/* Muestran afiliados y están entre 5000 y 10000 (usando AND lógica) */
+var j_filtro2 = {$and:[j_cond_exists,j_cond_caso2]}
+
+/* Muestran afiliados y son más de 10000 (usando AND lógica) */
+var j_filtro3 = {$and:[j_cond_exists,j_cond_caso3]}
+
+
+/* Se incluye el campo "subvencion" y se actualiza a 0€ */
+db.Partidos.updateMany(j_cond_not_exists, {$set:{"subvencion":0}})
+
+/* Se incluye el campo "subvencion" y se actualiza a 1000000€ */
+db.Partidos.updateMany(j_filtro1, {$set:{"subvencion":1000000}})
+
+/* Se incluye el campo "subvencion" y se actualiza a 3000000€ */
+db.Partidos.updateMany(j_filtro2, {$set:{"subvencion":3000000}})
+
+/* Se incluye el campo "subvencion" y se actualiza a 10000000€ */
+db.Partidos.updateMany(j_filtro3, {$set:{"subvencion":10000000}})
+
+/* Ahora se muestran los partidos y sus subvenciones mediante una proyección */
+/* Proyeccion: muestra nombre y subvención (omite el "_id") */
+var j_proyeccion = {"nombre":1,"subvencion":1,"_id":0}
+
+/* Muestra el nombre del partido y la subvención ordenados por subvención de mayor a menor */
+db.Partidos.find({},j_proyeccion).sort({"subvencion":-1})
+
+

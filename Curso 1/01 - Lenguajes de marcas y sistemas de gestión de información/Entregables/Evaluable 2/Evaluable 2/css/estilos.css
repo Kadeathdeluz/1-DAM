@@ -1,0 +1,1036 @@
+/* Import fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+/* ---------------------- Estilos globales ---------------------- (INICIO) */
+
+/* ---------------------- Elementos comunes a las 3 páginas: header, nav, footer, etc. ---------------------- (INICIO)*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Monserrat';
+}
+
+/* Elimina la decoración de los links */
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.8s;
+}
+
+/* Elimina la decoración de los links visitados */
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* Títulos genéricos h1, h2, h3 */
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: black;
+    font-weight: 400;
+}
+
+h1 {
+    background-color: #fce5e7;
+}
+
+h2 {
+    margin: 0 auto 2em 8em;
+    text-align: left;
+    letter-spacing: 4px;
+    font-family: 'Oswald';
+}
+
+h4 {
+    font-weight: 400;
+}
+
+
+
+/* Cabecera que contiene el logo y el banner (aunque este luego sigue al scroll) */
+header {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 6em 0 -2em;
+}
+
+/* Logo de CeedMarket */
+.logo_ceedmarket {
+    background-image: url(../img/Logo_CEEDmarket.png);
+    background-size: cover;
+    background-position: center;
+    height: 147px;
+    width: 375px;
+    transition: all 0.8s;
+    position: absolute;
+    top: 80px;
+}
+
+/* Al hacer hover sobre el logo cambia opacidad y rota */
+.logo_ceedmarket:hover {
+    opacity: 0.5;
+    transform: translateY(1px) rotate(-10deg) scale(1.2);
+}
+
+/* Anuncio que asoma arriba a la derecha y sigue el scroll */
+.anuncio {
+    height: 150px;
+    width: 30px;
+    position: fixed;
+    z-index: 5;
+    top: 40px;
+    right: 0px;
+    background-image: linear-gradient(#df0000, #fbcda8, #df0000);
+    background-position: -50px -0px;
+    border-radius: 50% 0 0 50%;
+    background-size: 180%;
+    box-shadow: 1px 1px 3px 2px #df0000;
+    transition: all 0.5s;
+}
+
+/* Al hacer hover el botón asoma un poco más*/
+.anuncio:hover {
+    width: 40px;
+}
+
+/* Al hacer hover muestra el mensaje*/
+.anuncio:hover .mensaje_tooltip {
+    visibility: visible;
+}
+
+/* Mensaje (tooltip) del banner*/
+.anuncio .mensaje_tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 11;
+    bottom: 40%;
+    left: -100%;
+    margin-left: -100px;
+}
+
+/* Pico del mensaje (simula que es un bocadillo) */
+.anuncio .mensaje_tooltip::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 100%;
+    margin-left: -5px;
+    border: 4px solid black;
+    transform: rotate(45deg);
+}
+
+/* Al hacer clic en el banner aparece la imagen */
+.anuncio:active {
+    background-image: url("../img/banner.png");
+    background-position: 20% center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 30% 0 0 30%;
+    width: 200px;
+    opacity: 1;
+}
+
+/* Al hacer clic en el banner el mensaje desaparece */
+.anuncio:active .mensaje_tooltip {
+    visibility: hidden;
+}
+
+/* Div encima del nav */
+.supnav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 2em;
+}
+
+/* Efecto de rotación para la diana */
+@keyframes rotacion {
+    0% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    25% {
+        transform: rotate3d(0, 0, 1, 90deg);
+    }
+
+    50% {
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+
+    75% {
+        transform: rotate3d(0, 0, 1, 270deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+
+}
+
+/* Diana que rota con la animación (keyframes) 'rotacion' */
+.diana {
+    background-image: url(../img/círculos-rojos-y-blancos.png);
+    background-size: cover;
+    width: 220px;
+    height: 180px;
+    position: relative;
+    top: 28px;
+    z-index: 1;
+    animation: rotacion 5s normal linear infinite;
+}
+
+/* Menú de navegación (nav) */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 3px 3px rgba(70, 70, 70, 0.452);
+    background-image: linear-gradient(125deg, #df0000, cornsilk 53%, #df0000);
+    position: relative;
+    height: 70px;
+}
+
+/* Lista desordenada del nav con flex y en horizontal */
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Eliminar los estilos de las listas (ul) para eliminar los puntos */
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 1.5em;
+    font-size: 1.2em;
+    padding: 1em;
+    transition: all 0.8s;
+}
+
+/* Efecto hover de los links del nav */
+nav li a:hover {
+    font-size: 1.2em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.294);
+}
+
+/* Div bajo el nav*/
+.subnav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+/* Iconos de las RRSS de Fontawesome */
+.iconos_rrss {
+    margin: .5em 1em;
+    font-size: 1.5em;
+    display: flex;
+}
+
+/* Suaviza el efecto al dejar de hacer hover */
+.iconos_rrss>a {
+    color: black;
+    transition: ease 0.8s;
+    padding-right: 1em;
+}
+
+/* Efecto al hacer hover sobre cada icono de RRSS */
+.iconos_rrss>a:hover {
+    transform: scale(1.2);
+    transition: ease 0.3s;
+}
+
+/* Color para el icono de Twitter */
+.iconos_rrss a#twitter {
+    color: #00aced;
+}
+
+/* Color para el icono de Facebook */
+.iconos_rrss a#facebook {
+    color: #3b5998;
+}
+
+/* Color para el icono de Pinterest */
+.iconos_rrss a#pinterest {
+    color: #C92228;
+}
+
+/* Color para el icono de Instagram */
+.iconos_rrss a#instagram {
+    color: #8a3ab9;
+}
+
+/* Color para el icono de Google+ */
+.iconos_rrss a#gplus {
+    color: #d34836;
+}
+
+/* Texto del envío */
+.envio {
+    margin: .5em 1em;
+    font-size: 1em;
+    color: #df0000;
+    text-decoration: underline;
+}
+
+/* Footer común a las tres páginas */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    height: 400px;
+    color: white;
+    background-color: rgb(201, 198, 198);
+    padding: 2em;
+    text-align: left;
+}
+
+/* Para cada uno de los apartados del footer */
+.contacto,
+.empresa,
+.otros,
+.servicios {
+    width: 14%;
+    padding-left: 0.45em;
+    flex: 1;
+}
+
+footer p {
+    width: 100%;
+    text-align: center;
+}
+
+/* Divisor vertical (línea blanca) */
+.lineaVertical {
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    background-color: white;
+    height: 50%;
+}
+
+footer h3 {
+    color: black;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+footer li {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.5em;
+}
+
+footer h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+footer a:hover {
+    background-color: #808080;
+}
+
+/* --------------- Elementos comunes a las 3 páginas: header, nav, footer, etc. --------------- (FIN)*/
+/* ---------------------- Estilos globales ---------------------- (FIN) */
+
+/* ---------------------- Estilos index.html ---------------------- (INICIO) */
+
+/* Imagen de circuitos que te sigue */
+.circuitos {
+    width: 100%;
+    height: 300px;
+    box-shadow: 1px 1px 20px 3px black inset;
+    background-image: url(../img/fondo_inicio.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    margin-bottom: 8em;
+}
+
+/* Cuadro de cita */
+blockquote {
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+    padding: 1em 2em;
+    border-top: solid 1px #df0000;
+    border-left: solid 5px #df0000;
+}
+
+/* Autor de la cita, se utiliza comunmente la etiqueta <small> */
+blockquote>small {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    color: grey;
+}
+
+/* Línea horizontal roja */
+.linea_roja {
+    width: 50%;
+    margin: 3em auto 4em;
+    border: 16px #df0000;
+    border-style: outset;
+    border-radius: 25px;
+    background-color: black;
+}
+
+/* Contenedor grid de categorías destacadas */
+.grid_categoria {
+    width: 80%;
+    margin: 0 auto 8em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+/* items de Categorias grid container */
+.categorias_grid_item {
+    width: 200px;
+    height: 230px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+/* Div con el fondo rojo */
+.div_rojo {
+    background-color: #df0000;
+    border-radius: 25px;
+    align-content: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    font-weight: 900;
+}
+
+/* div con el fondo blanco dentro del rojo */
+.div_blanco {
+    transform: skew(-20deg);
+    width: 80%;
+    height: 4em;
+    border-radius: 1em;
+    left: 10%;
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* para el texto campañas */
+}
+
+/* Span dentro del div blanco de camapañas */
+.div_blanco span {
+    color: #df0000;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    /* para el texto campañas */
+}
+
+/* Imágenes de Categorías destacadas */
+.categorias_grid_item img {
+    height: 80%;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+/* Categoría destacada texto */
+.categorias_grid_item h3 {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* tipo de letra de los pies de las imágenes */
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Efectos hover de las imágenes de categorías destacadas */
+/* Nota: La primera "imagen" es el texto, aunque no sea una imagen como tal */
+
+/* Efecto hover de la segunda imagen de Categorías destacadas (móviles)*/
+.grid_categoria div:nth-child(2) img:hover {
+    filter: blur(3px);
+    /* efecto borroso */
+}
+
+/* Efecto hover de la tercera imagen de Categorías destacadas (portátiles)*/
+.grid_categoria div:nth-child(3) img:hover {
+    filter: grayscale(80%);
+    /* efecto blanco/negro */
+}
+
+/* Efecto hover de la cuarta imagen de Categorías destacadas (pequeño elect.)*/
+.grid_categoria div:nth-child(4) img:hover {
+    filter: sepia(60%);
+    /* efecto sepia */
+}
+
+/* Efecto hover de la quinta imagen de Categorías destacadas (electrodomésticos)*/
+.grid_categoria div:nth-child(5) img:hover {
+    filter: drop-shadow(5px 5px 10px #df0000);
+    /* efecto caja sombreada */
+}
+
+/* Efecto hover de la sexta imagen de Categorías destacadas (televisión)*/
+.grid_categoria div:nth-child(6) img:hover {
+    filter: invert(100%);
+    /* efecto colores invertidos */
+}
+
+/* Texto de ofertas puntuales decorado con sombras */
+.ofertas_puntuales>h2 {
+    width: 80%;
+    margin: auto;
+    margin-top: 4em;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Oswald';
+    letter-spacing: 4px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px #aaa;
+}
+
+/* Ofertas puntuales con elementos organizados con flex */
+.ofertas_flex_container {
+    width: 80%;
+    min-height: 520px;
+    min-width: 420px;
+    margin: 0 auto 8em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-around;
+}
+
+/* items de Ofertas flex container */
+.ofertas_flex_item {
+    width: 400px;
+    height: 520px;
+    text-align: center;
+    border-radius: 1em;
+    border: solid 1px rgba(128, 128, 128, 0.411);
+    margin: 10px;
+}
+
+/* Ambos títulos con fuente: Arial, Helvetica, sans-serif */
+.ofertas_flex_item h3,
+.ofertas_flex_item h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* título de la fecha en Ofertas puntuales */
+.ofertas_flex_item h3 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+/* título de la oferta color rojo en Ofertas puntuales */
+.ofertas_flex_item h2 {
+    margin: 0;
+    color: #df0000;
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: 800;
+}
+
+/* imagen de los flex item de Ofertas puntuales */
+.ofertas_flex_item img {
+    padding: 0;
+    width: 100%;
+    height: 75%;
+    border-radius: 1em 1em 0 0;
+    /* para que la imagen cuadre con el div,
+    también valdría hacer un overflow hidden*/
+}
+
+/* Promociones con elementos organizados con flex */
+.promociones_flex_container {
+    width: 80%;
+    min-height: 450px;
+    margin: 0 auto 8em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-around;
+}
+
+/* items de Promociones flex container */
+.promociones_flex_item {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 1em;
+    border: solid 1px rgba(128, 128, 128, 0.411);
+    transition: all 0.5s, width 0s, height 0s;
+    /* permite que se vea transición entre efectos hover pero no en resize del item */
+}
+
+/* Texto de las imágenes de promociones destacadas */
+.promociones_flex_item h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    background-color: #df0000;
+    font-weight: 900;
+    color: white;
+}
+
+/* efecto hover sobre los items de promociones destacadas */
+.promociones_flex_item:hover {
+    transform: scale(1.2);
+    transition: ease 0.3s;
+}
+
+/* Imágenes de las promociones (propiedades comunes a las 6 img) */
+.img_promo {
+    width: 100%;
+    height: 90%;
+    background-size: contain;
+    background-position: center center;
+}
+
+/* Imágenes de las promociones (como fondos de div) */
+#img_promo1 {
+    background-image: url(../img/diapadre.jpg);
+}
+
+#img_promo2 {
+    background-image: url(../img/clima.avif);
+}
+
+#img_promo3 {
+    background-image: url(../img/lavadora.jpg);
+}
+
+#img_promo4 {
+    background-image: url(../img/DEPORTE.jpg);
+}
+
+#img_promo5 {
+    background-image: url(../img/OUTLET.jpg);
+}
+
+#img_promo6 {
+    background-image: url(../img/horno.webp);
+}
+
+/* ---------------------- Estilos index.html (FIN) ---------------------- */
+
+/* ---------------------- Estilos productos.html (INICIO) ---------------------- */
+
+/* Grid Galería de Categorías destacadas con ofertas semanales */
+.galeria {
+    width: 80%;
+    height: 600px;
+    margin: 0 auto 4em;
+    grid-gap: 10px;
+    display: grid;
+    /* plantilla para la distribución de los items en el grid */
+    grid-template-areas:
+        "i1 i1 i2 i2 i3 i3"
+        "i1 i1 i2 i2 i3 i3"
+        "i4 i4 i2 i2 i5 i5"
+        "i4 i4 i2 i2 i5 i5";
+}
+
+/* div con imagen de fondo y texto */
+.galeria_item {
+    position: relative;
+    border-radius: 1em;
+    overflow: hidden;
+    /* para evitar que las cabeceras se salgan del div y quede feo antes de que salte la media query*/
+    justify-content: center;
+    align-content: center;
+    transition: all 0.5s;
+    /* suaviza el retorno tras el hover */
+    box-shadow: 1px 1px 3px 3px gray;
+}
+
+/* texto de las Categorías desctacadas con ofertas semanales */
+.galeria div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 1.3em;
+    background-color: #df0000;
+    color: white;
+    border-radius: 0 0 0.5em 0.5em;
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px 10px;
+}
+
+/* Efecto hover de sombreado en goldenrod para todos los div de la galería */
+.galeria div:hover {
+    box-shadow: 1px 1px 3px 3px goldenrod;
+}
+
+/* Primer div de la galería: electrodomésticos */
+.galeria div:nth-child(1) {
+    background-image: url("../img/cocinas.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% center;
+    grid-area: i1;
+    /* indica qué posición va a ocupar el item en la plantilla */
+}
+
+/* Efecto hover de cocinas */
+.galeria div:nth-child(1):hover {
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+}
+
+/* Segundo div de la galería: televisión */
+.galeria div:nth-child(2) {
+    background-image: url("../img/tv.jpg");
+    background-size: cover;
+    background-position: 55% center;
+    grid-area: i2;
+    /* indica qué posición va a ocupar el item en la plantilla */
+}
+
+/* Efecto hover de TV */
+.galeria div:nth-child(2):hover {
+    transform: scale(0.6) rotate(20deg);
+    transition-duration: 0.5s;
+}
+
+/* Tercer div de la galería: gaming */
+.galeria div:nth-child(3) {
+    background-image: url("../img/gaming.jpg");
+    background-repeat: no-repeat;
+    background-size: 350%;
+    background-position: 80% 10%;
+    background-size: cover;
+    grid-area: i3;
+    /* indica qué posición va a ocupar el item en la plantilla */
+}
+
+/* Efecto hover de Gaming */
+.galeria div:nth-child(3):hover {
+    transform: rotateY(180deg);
+    transition-duration: 0.5s;
+}
+
+/* Cuarto div de la galería: videojuegos  */
+.galeria div:nth-child(4) {
+    background-image: url("../img/videojuegos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 0%;
+    grid-area: i4;
+    /* indica qué posición va a ocupar el item en la plantilla */
+}
+
+/* Efecto hover de Videojuegos */
+.galeria div:nth-child(4):hover {
+    transform: rotateX(180deg);
+    transition-duration: 0.5s;
+}
+
+/* Quinto div de la galería: movilidad */
+.galeria div:nth-child(5) {
+    background-image: url("../img/movilidad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80% 0;
+    grid-area: i5;
+    /* indica qué posición va a ocupar el item en la plantilla */
+}
+
+/* Efecto hover de Movilidad */
+.galeria div:nth-child(5):hover {
+    transform: skew(20deg) translateX(-100px);
+    transition-duration: 0.5s;
+}
+
+/* Galería de imágenes de Todas nuestras categorías */
+.galeria_todas {
+    width: 80%;
+    min-height: 450px;
+    margin: 0 auto 8em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-around;
+}
+
+/* Cada div de Todas nuestras categorías */
+.galeria_todas_item {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 20px;
+    overflow: hidden;
+    /* también se puede hacer la imagen con el mismo border-radius que el div */
+    border-radius: 1em;
+    border: solid 1px rgba(128, 128, 128, 0.411);
+    font-size: 0.9rem;
+    box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.411);
+    /* sombreado */
+    transition: all 0.3s ease-in-out;
+    /* suaviza el retorno del hover */
+}
+
+/* Efecto hover de los items -> opacidad */
+.galeria_todas_item:hover {
+    opacity: 0.5;
+}
+
+/* separación del h3 con la imagen */
+.galeria_todas_item h3 {
+    margin-top: 0.5em;
+}
+
+/* Todas las imágenes (salvo 3) ocupan el 100% del ancho */
+.galeria_todas_item img {
+    height: 80%;
+    width: 100%;
+}
+
+/* En el PDF se aprecia que las 3 imágenes no ocupan el 100% */
+.galeria_todas div:nth-child(2) img,
+.galeria_todas div:nth-child(3) img,
+.galeria_todas div:nth-child(4) img {
+    width: 80%;
+}
+
+/* .galeria_todas_item h3 {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+}*/
+
+/* ---------------------- Estilos productos.html ---------------------- (FIN) */
+
+/* ---------------------- Estilos localizacion.html ---------------------- (INICIO) */
+
+/* contenedor del iframe y del formulario */
+.localizacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+/* contenedor padre del iframe */
+.mapa {
+    margin: 0 auto 8em;
+    padding: 2.5em;
+}
+
+/* iframe de Maps */
+.mapa iframe {
+    border-radius: 4em 4em 4em 0;
+    box-shadow: 1px 1px 3px 3px rgb(128, 128, 128);
+}
+
+/* contenedor mapa y formulario, atributos conjuntos */
+.mapa,
+.contenedor_formulario {
+    flex: 1;
+    margin: 10px;
+    padding-right: 10px;
+}
+
+/* título Contacta con nosotros */
+.contenedor_formulario h2 {
+    text-align: right;
+}
+
+/* formulario */
+form {
+    text-align: center;
+}
+
+/* todos los campos ocupan el 100% del padre */
+form input,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* estilos del botón Aceptar */
+input[type="submit"] {
+    background-color: #bb2e2e;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+/* efecto hover del botón Aceptar */
+input[type="submit"]:hover {
+    background-color: #d43030;
+}
+
+/* contenedor de mensaje + avatar de CEEDi */
+.ayudante {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+/* mensaje de CEEDi */
+.contenedor_formulario span {
+    display: block;
+    position: relative;
+    top: 30px;
+    width: 60%;
+}
+
+
+/* imagen de CEEDi */
+.ceedi {
+    border-radius: 50%;
+    background-image: url(../img/avatar.jpg);
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+}
+
+/* efecto hover de CEEDi */
+.ceedi:hover {
+    filter: blur(2px);
+}
+
+/* ---------------------- Estilos localizacion.html ---------------------- (FIN) */
+
+/* ---------------------- MEDIA QUERIES ---------------------- (INICIO) */
+
+/* Media query para móviles (800px o menos) */
+@media only screen and (max-width: 800px) {
+    /* Cambios comunes a las 3 páginas */
+
+    /* Centrado del logo */
+    .logo_ceedmarket {
+        justify-self: center;
+    }
+
+    /* Centrado de títulos */
+    h2 {
+        margin: auto;
+        text-align: center;
+    }
+
+    /* Ajustes en el nav para mostrar el color correcto y la distribución correcta */
+    nav {
+        background-image: linear-gradient(to right, cornsilk, #df0000);
+        height: fit-content;
+        display: block;
+    }
+
+    /* Cambia la distribución de el nav de horizontal (row) a vertical (column)*/
+    nav ul {
+        flex-direction: column;
+        padding: 1.5em;
+    }
+
+    /* Adapta la altura del footer para mostrar el párrafo */
+    footer {
+        height: fit-content;
+    }
+
+    /* Oculta los div y deja el párrafo */
+    footer>div {
+        display: none;
+    }
+
+    /* ------------------------ Cambios de INDEX ------------------------ */
+    #campanyas_promociones {
+        display: none;
+    }
+
+    /* Categorías destacadas en vertical */
+    .grid_categoria {
+        margin-top: 20px;
+        grid-template-columns: min-content;
+        justify-content: center;
+    }
+
+    /* Ofertas puntuales se pone automáticamente en vertical debido al tamaño de los items */
+    .ofertas_flex_item {
+        height: fit-content;
+    }
+
+    /* Promociones destacadas en vertical */
+    .promociones_flex_item {
+        width: 100%;
+    }
+
+    /* Las imágenes quedan mejor sin repetir el fondo */
+    .img_promo {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* ------------------------ Cambios de PRODUCTOS  ------------------------ */
+
+    /* La galería cambia la distribución de los items a columna */
+    .galeria {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* cada categoría pasa a ocupar el 100% de ancho y 15% de alto */
+    .galeria div {
+        width: 100%;
+        height: 15%;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    /* Cambia el ancho de cada categoría */
+    .galeria_todas_item {
+        width: 350px;
+    }
+
+    /* la imagen ocupa el 100% de la categoría */
+    .galeria_todas_item img {
+        width: 100%;
+    }
+
+    /* ------------------------ Cambios de LOCALIZACIÓN  ------------------------ */
+
+    /* coloca el formulario bajo el mapa */
+    .localizacion {
+        flex-direction: column;
+    }
+
+    /* centra el formulario */
+    .contenedor_formulario {
+        width: 80%;
+        align-self: center;
+    }
+
+    .contenedor_formulario h2 {
+        padding-bottom: 2em;
+    }
+}
+
+/* ---------------------- MEDIA QUERIES ---------------------- (FIN)*/

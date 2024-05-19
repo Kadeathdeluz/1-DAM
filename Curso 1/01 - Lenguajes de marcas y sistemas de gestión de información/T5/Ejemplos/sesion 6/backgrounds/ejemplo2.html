@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+        .contenedorCalc1{
+           width:80%;
+           height:400px;
+           border:1px solid #d9d9d9;
+           margin:10px auto;
+           padding:10px;
+        }
+        .calcTest{
+           float:left;
+           border:1px solid #d9d9d9;  
+           margin:10px;  
+           padding:20px;  
+           background-color:#efefef;  
+           height: calc(100% - 2*10px - 2*20px - 2px);  /*10px de su margen y 20px del padding y dos del borde*/
+           width:  calc(50% - 2*10px - 2*20px - 2px);       
+        }
+        .calcImg{
+            background-image:url(../imgs/cafe_pequeño.png);
+          background-repeat:no-repeat;
+          background-position:calc(100% - 20px) calc(100% - 20px);
+        }
+
+        .Test{
+           float:left;
+           border:1px solid #d9d9d9;  
+           margin:10px;  
+           padding:20px;  
+           background-color:#efefef;  
+           height: calc(100% - 2*10px - 2*20px - 2px);  /* 10px del margen, 20 pixels del padding y dos pixels del borde*/
+           width:  calc(50% - 2*10px - 2*20px - 2px);        
+        }
+        .Img{
+            background-image:url(../imgs/cafe_pequeño.png);
+            background-repeat:no-repeat;
+            background-position: 90% 80%;
+          
+        }
+        
+         
+          </style>
+         </head>
+          <body>
+         
+           
+            <div class="contenedorCalc1">  
+              <div class="calcTest calcImg"></div>    
+              <div class="calcTest calcImg"></div>
+           </div>
+
+           <div class="contenedorCalc1">  
+            <div class="Test Img"></div>    
+            <div class="Test Img"></div>
+         </div>
+         
+          </body>
+        
+    
+</body>
+</html>

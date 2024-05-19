@@ -1,0 +1,18 @@
+.animacionLogo {
+     animation-duration: 5s;
+     animation-name: animLogo;
+     animation-iteration-count: infinite;
+   }
+ @keyframes animLogo{
+     from {
+         -webkit-transform: rotate(0deg);
+         transform: rotateY(0deg);
+     }
+     50%{
+         -webkit-transform: rotate(180deg);
+         transform: rotateY(180deg);
+     } to {
+         -webkit-transform: rotate(360deg);
+         transform: rotateY(360deg);
+         }
+ }

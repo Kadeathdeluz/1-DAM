@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Menú horizontal con transiciones */
+
+/* Formato general de cada item */
+
+.menu {
+  display: block;
+  position: relative;
+  height: 76px;
+  width: 120px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Bordes superiores */
+
+.menu.servicios {
+  border-top: #ffc000 0.3em solid;
+}
+
+.menu.recursos {
+  border-top: #b81800 0.3em solid;
+}
+
+.menu.proyectos {
+  border-top: #00a53c 0.3em solid;
+}
+
+.menu.contacto {
+  border-top: #9600b4 0.3em solid;
+}
+
+/* Atributos y transición */
+
+.menu > span {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+}
+
+.menu:after, .menu > span > span {
+  display: block;
+  text-align: center;
+  border-radius: 0em;
+  padding: 2em 0 1.5em;
+}
+
+.menu:after {
+  content: attr(data-title); /*The attr() CSS function is used to retrieve the value of an attribute of the selected element and use it in the stylesheet.*/
+  width: 100%;
+  background: #000;
+  color: #fff; 
+}
+
+.menu > span > span {
+  width: 120px;
+  color: #fff;
+}
+
+.menu.servicios > span > span {
+  background: #ffc000;
+}
+
+.menu.proyectos > span > span {
+  background: #00a53c;
+}
+
+.menu.recursos > span > span {
+  background: #b81800;
+}
+
+.menu.contacto > span > span {
+    background: #9600b4;
+}
+
+/* Lo que pasa con hover */
+
+.menu:hover > span {
+    height: 100%; 
+}
+
+/* Dando formato a lista */ 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  display: inline;
+  float: left;
+  text-decoration: none;
+  font-family: sans;
+}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="menu servicios" href="#" data-title="Servicios"><span>
+            <span>Servicios</span>
+          </span></a></li>
+        <li><a class="menu proyectos" href="#" data-title="Proyectos">
+          <span>
+            <span>Proyectos</span>
+          </span>
+          </a></li>
+          <li><a class="menu recursos" href="#" data-title="Recursos">
+          <span>
+            <span>Recursos</span>
+          </span>
+          </a></li>
+            <li><a class="menu contacto" href="#" data-title="Contacto">
+          <span>
+            <span>Contacto</span>
+          </span>
+          </a></li>
+        </ul>
+</body>
+</html>

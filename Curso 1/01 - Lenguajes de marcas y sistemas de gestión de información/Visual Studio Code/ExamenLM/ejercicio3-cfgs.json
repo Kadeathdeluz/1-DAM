@@ -1,0 +1,30 @@
+{
+    "nombre": "CeedCv",
+    "web": "http://www.ceedcv.es/",
+    "ciclos": [
+        {
+            "horario": "Nocturno",
+            "nombre": "Administración de Sistemas Informáticos en Red",
+            "grado": "Superior",
+            "orden": {
+                "año": 2012
+            }
+        },
+        {
+            "horario": "Diurno",
+            "nombre": "Desarrollo de Aplicaciones Web",
+            "grado": "Superior",
+            "orden": {
+                "año": 2012
+            }
+        },
+        {
+            "horario": "Diurno",
+            "nombre": "Sistemas Microinformáticos y Redes",
+            "grado": "Medio",
+            "orden": {
+                "año": 2009
+            }
+        }
+    ]
+}

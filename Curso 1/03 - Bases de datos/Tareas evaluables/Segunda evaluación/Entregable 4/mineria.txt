@@ -1,0 +1,49 @@
+/* Comenzamos siempre asegurando que usamos la BD */
+use MDBElecciones
+
+/* 1)-----------------------------------------------------------------------------------------------------*/
+
+/* separamos el array de votos para tratarlo */
+var stage_separar = {"$unwind":"$votos"}
+
+/* Que tengan gratificacion y sea mayor que 500€ */
+var j_filtro = {$and:[{"votos.gratificacion":{$exists:true}},{"votos.gratificacion":{$gt:500}}]}
+
+/* aplicamos el filtro al stage del match */
+var stage_filtro = {"$match":j_filtro}
+
+/* creamos la proyeccion y listamos cada elemento de votos (consulta a a prueba de cambios) */
+var j_proyeccion = {"_id":0,"siglas":1,"votos.id_dig":1,"votos.circunscripcion":1,"votos.gratificacion":1}
+//también valdría con "votos":1 para este caso
+
+/* stage de proyeccion */
+var stage_proyeccion = {$project:j_proyeccion}
+
+/* ordenamos por gratificacion de menor a mayor */
+var stage_sort = {$sort:{"votos.gratificacion":1}}
+
+/* para mostrar las siglas y los datos de los votos necesitamos una agregación con los stage que hemos definido */
+db.Partidos.aggregate([stage_separar,stage_filtro,stage_proyeccion,stage_sort])
+
+/* 2)-----------------------------------------------------------------------------------------------------*/
+
+/* separamos el array de votos para tratarlo */
+var stage_separar = {$unwind:"$votos"}
+
+/* proyeccion del total gastado por partido (siglas) */
+var j_proyeccion = {"_id":0, "siglas":1, "total_gastado":{$sum:"$votos.gratificacion"}}
+
+/* stage de la proyeccion */
+var stage_proyeccion = {$project:j_proyeccion}
+
+/* ordenamos por coste total (de mayor a menor) */
+var j_sort = {"total_gastado":-1}
+
+/* stage del sort */
+var stage_sort = {$sort:j_sort}
+
+/* limitamos el resultado a 1 (el que más) con el stage limit */
+var stage_limit = {$limit:1}
+
+/* mediante una agregación, proyectamos, ordenamos y mostramos el partido con más gasto en gratificaciones */
+db.Partidos.aggregate([stage_proyeccion, stage_sort, stage_limit])

@@ -1,0 +1,35 @@
+8,55/10
+  
+CONSULTA 1     0.9/1
+
+Pedí ordenar por el último campo, no por partido.
+ 
+CONSULTA 2     1.15/1.25
+
+En realidad no puedes ordenar por nombre de centro, ya que no son únicos y distintos centros pueden coincidir el nombre, aunque con los datos de ejemplo no se dé el caso, si quieres mantener los centros separados usa también la clave a parte de lo que muestres, GROUP BY id_centro,nombre_centro.
+
+CONSULTA 3     1.25/1.25
+
+Bueno, yo no hubiese metido la parte de la circunscripción en un IN ya que siempre es más lento, pero considerando que el enunciado pide usar IN y que una lista de circunscripciones no puede ser tan larga, tampoco veo inconveniente.
+
+Eso sí, cuando uses IN y la subconsulta tenga repeticiones, usa siempre DISTINCT en la subconsulta. Imagina datos reales, millones de votantes, ahora tu IN compara cada circunscripción con una lista de millones de circunscripciones, en lugar de solo 2 si hubieses puesto el DISTINCT... aunque claro en cuanto encuentre la primera que cuadre parará, así que mientras lasid_digital no estén ordenadas por circunscripción no debería ser mucho, pero si lo están por defecto o introducción de datos entonces tus consultas pasaría a ser terriblemente ineficiente.
+ 
+CONSULTA 4     0.6/1.5
+
+O te has saltado alguna línea al copiar o no me exlplico que no te pareciese sospechoso una lista con 38 interventores cuando sólo hay 7. Además te has montado un lío bastante interesante.
+
+Te has dejado la condición de unión de votante e interventor (v.dni=i.dni), así que tu resultado se muestra para todos los votantes en un CROSS JOIN.
+
+Has agrupado por nombre, lo que fusionaría la gente del mismo nombre y no debes hacerlo como he comentado antes, pero la cuestión importante aquí es ¿por qué agrupar cuando en realidad no agrupas nada? Tienes una lista de personas que estas agrupando POR PERSONA, al no repetirse nombres no has agrupado absolutamente nada. Además necesitas añadir el sueldo al group by para mantenerlo y ponerlo en el HAVING... Para qué todo eso? un AND después de la primera condición del where y pones allí lo que tienes en el HAVING, sin falsos agrupamientos.
+ 
+CONSULTA 5     1,9/2
+
+a)Aquí estas aprovechando una característica de MySQL que los demás no tienen, no lo hagas. TODOS LOS CAMPOS QUE NO ESTÉN EN EL GROUP BY DESAPARECEN, todo lo que pongas en la proyección fuera de funciones agregadas debe salir en el GROUP BY, tanto partido como pago_compra_voto (admito que ese último se me pasó a mí también en la solución propuesta).
+
+
+ 
+CONSULTA 6     2.75/3
+ 
+b) El group by dni de la última línea sobra, estás usando la vista, ya está todo agrupado, tienes una tabla de dni con votos en el from, si agrupas por dni no agrupas por nada, y aún así en los otros SGBD eso haría que no se muestre num_votos_vista y falle, al no estar en el GROUP BY por lo que he comentado en 5.
+
+c) Idem pero sin vista, el GROUP BY final sobra, y te lo has cogido a costumbre... piénsalo, ¿si una consulta no tiene agregadas para qué vas a usar un GROUP BY? lo tienen las subconsultas que tienen funciones agregadas, pero no lo principal si lo resuelves así.

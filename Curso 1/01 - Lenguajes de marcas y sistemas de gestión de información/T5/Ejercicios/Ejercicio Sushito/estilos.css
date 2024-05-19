@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Playfair Display', serif;
+    font-variant: small-caps;
+}
+
+h1, h2 {
+    clear:both;
+    text-align: center;
+    color:steelblue;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.banner{
+    height: 150px;
+    width: 30px;
+    position: fixed;
+    z-index: 5;
+    top: 40px;
+    right: 0px;
+    background-image: linear-gradient(#fa6c31,#fbcda8,#fa6c31) ;
+    background-position: -50px -0px;
+    border-radius:20%  0 0 40%;
+    background-size: 180%;
+    box-shadow: 1px 1px 3px 2px grey;
+    transition: all .5s;
+}
+
+.banner:hover{
+    width: 40px;
+}
+
+.banner:hover .tooltiptext {
+    visibility: visible;
+}
+
+.banner .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 11;
+    bottom: 40%;
+    left: -100%;
+    margin-left: -100px;
+}
+
+.banner .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    /*Diferentes formas de hacerlo*/
+    left: 100%;
+    margin-left: -5px;
+    border: 4px solid black;
+    /*Otra forma de hacerlo*/
+   /* right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: black;*/
+    rotate: 45deg;
+}
+
+.supnav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 2em; 
+}
+
+.covidfree{
+    background-image: url("img/selloCovidfree.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    width: 160px;
+    height: 140px;
+    position: relative;
+    top:10px;
+}
+
+.michelin{
+    background-image: url("img/michelinStars.png");
+    background-size: cover;
+    width: 220px;
+    height: 180px;
+    position: relative;
+    top:28px;
+    z-index: 2;
+}
+
+header{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 6em 0 -2em;
+}
+
+header img{
+    max-height: 200px;
+    transition: all .8s;
+    border-radius: 50% 0 0 50%;
+    position: absolute;
+    right: 41%;
+    top: 25px;
+}
+
+.banner:active{
+    background-image: url("img/cuponDescuento.jpg");
+    background-position: 20% center;
+    background-size: cover;
+    border-radius:10%  0 0 30%;
+    width: 200px;
+    opacity: 1;
+}
+
+.banner:active .tooltiptext {
+    visibility: hidden;
+}
+
+header img:hover{
+    opacity: 0.5;
+    transform: translateY(1px) rotate(-10deg) scale(120%);
+}
+
+nav{
+    text-align: center;
+    box-shadow: 1px 1px 1px 3px rgba(70, 70, 70, 0.452);
+    background-color: darkseagreen;
+    position: sticky;
+    top:5px;
+    z-index: 1;
+}
+nav li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 1.5em;
+    font-size: 1.2em;
+    padding: 1em;
+    transition: all .8s;
+}
+
+nav a:hover{
+    font-size: 1.2em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.294);      
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    /*transition: all .8s;*/
+}
+
+.subnav{
+    margin-top: 15px;
+}
+
+.socialMediaLinks{
+    margin: .5em 1em;
+    font-size: 1.5em;  
+    float:left;
+}
+
+.socialMediaLinks a{
+    margin-right: .5em;
+}
+
+.socialMediaLinks a.fa-twitter { 
+    color: #00aced;
+}
+.socialMediaLinks a.fa-facebook-f { 
+    color: #3b5998; 
+}
+.socialMediaLinks a.fa-pinterest { 
+    color: #C92228; 
+}
+.socialMediaLinks a.fa-instagram { 
+    color: #8a3ab9; 
+}
+.socialMediaLinks a.fa-google-plus-g { 
+    color: #d34836; 
+}
+
+.socialMediaLinks a:hover{
+    opacity: .5;
+}
+
+
+
+.telephone{
+    margin: .5em 1em;
+    font-size: 1.2em; 
+    color: #fa6c31;
+    float: right;
+}
+
+
+
+.cite{
+    font-size: 1.5em;
+    width: 80%;
+    margin: 0 auto 4em;
+    font-style: italic;
+
+}
+
+.impar{
+    border-left: 5px solid steelblue;
+    padding: 10px;
+}
+.par{
+    border-right: 5px solid steelblue;
+    padding: 10px;
+    text-align: right;
+}
+
+.impar + span{
+    font-style: normal;
+    font-size: .8em;
+    color: grey;
+    position: absolute;
+    right: 0;
+    margin-top: 2em;
+}
+.par + span{
+        font-style: normal;
+        font-size: .8em;
+        color: grey;
+        position: absolute;
+        left: 0;
+        margin-top: 2em;
+}
+
+.divider{
+    width: 30%;
+    margin: 8em auto 4em ;
+    border:3px solid black;
+    background-color: black;
+}
+
+footer{ 
+    
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    color:white;
+    background-color: rgb(46, 46, 46);
+    padding: 2em;
+    text-align: center;
+}
+
+footer h3{
+    color: #fa9c31;
+    text-shadow: 1px 1px 7px 4px white;
+}
+
+/*Flex container*/
+
+.flex-container {      
+    width: 80%;
+    min-height: 450px;
+    margin: 0 auto 8em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+   /* gap: 10px;
+    row-gap: 40px;*/
+    justify-content: space-around;
+  }
+
+  .flex-item {
+    width: 220px;
+    height: 450px;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.411);
+    padding: 1em;
+    margin: 10px;
+  }
+
+  .flex-item:hover {
+    opacity: 0.5;
+  }
+
+  .image {
+    border: 1px solid rgba(128, 128, 128, 0.459);
+    height: 90%;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .img_flex {
+    width:100%;
+    height: 50%;
+  }
+
+  /* PÁGINA EQUIPO GALERIA IMÁGENES */
+
+.gallery{
+    width: 80%;
+    height: 600px;
+    margin: 0 auto 4em;
+    grid-gap: 10px;
+    display: grid;
+
+    grid-template-areas: 
+    "i1 i1 i2 i2  i3"
+    "i1 i1 i2 i2  i3"
+    "i4 i4 i2 i2  i5"
+    "i4 i4 i2 i2  i5";
+}
+
+.gallery div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5em;
+    transition: all .5s;
+    box-shadow: 1px 1px 3px 3px grey;
+}
+
+.gallery div:hover{
+    box-shadow: 1px 1px 3px 3px goldenrod;
+}
+.gallery div:nth-child(1){
+    
+    background-image: url("img/trabajadores/andrewNishimura.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% center;
+    grid-area: i1;
+    filter: sepia(30);
+}
+
+.gallery div:nth-child(1):hover{
+    transform: rotate(360deg);
+}
+
+.gallery div:nth-child(2){
+    background-image: url("img/trabajadores/nakaneNishimura.jpg");
+    background-size: cover;
+    background-position: 55% center;
+    grid-area: i2;
+    filter: blur(3px);
+}
+.gallery div:nth-child(2):hover{
+    transform: scale(60%) rotate(20deg);
+    filter: blur(0);
+}
+
+
+.gallery div:nth-child(3){
+    background-image: url("img/trabajadores/hichitoNishimura.jpg");
+    background-repeat: no-repeat;
+    background-size: 350%;
+    background-position: 80% 10%;
+    background-size: cover;
+    grid-area: i3;
+    filter: grayscale();
+}
+.gallery div:nth-child(3):hover{
+    transform: rotateY(180deg);
+}
+.gallery div:nth-child(4){
+    background-image: url("img/trabajadores/joeNishimura.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 0%;
+    grid-area: i4;
+}
+
+.gallery div:nth-child(4):hover{
+    transform: rotateX(180deg);
+}
+.gallery div:nth-child(5){
+    background-image: url("img/trabajadores/fredNishimura.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:80% 0;
+    filter: sepia();
+    grid-area: i5;
+}
+
+.gallery div:nth-child(5):hover{
+    transform: skew(20deg) translateX(-100px);
+}
+
+
+/* CITAS TRABAJADORES */
+
+.descriptions{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.people2{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 2em;
+    box-shadow: 4px 2px 10px 3px rgb(83, 83, 83) inset;
+}
+
+article:nth-child(1) .people2{
+    background-position: 70% 15%;
+    background-size: 250%;
+    background-image: url("img/trabajadores/andrewNishimura.jpg");
+}
+
+article:nth-child(2) .people2{
+    background-position: 85% 5%;
+    background-size: 300%;
+    background-image: url("img/trabajadores/hichitoNishimura.jpg");
+}
+
+article:nth-child(3) .people2{
+    background-position: 85% 5%;
+    background-size: 300%;
+    background-image: url("img/trabajadores/fredNishimura.jpg");
+}
+
+article:nth-child(4) .people2{
+    background-position: 55% 5%;
+    background-size: 200%;
+    background-image: url("img/trabajadores/nakaneNishimura.jpg");
+}
+
+article:nth-child(5) .people2{
+    background-position: 45% 25%;
+    background-size: 200%;
+    background-image: url("img/trabajadores/joeNishimura.jpg");
+}
+
+.descriptions article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+article .people2, 
+article .cite{
+    align-self: flex-start;
+    margin-bottom: 4em;
+}
+
+.people2{
+    animation: bounce .8s  infinite ease-in-out;
+    animation-play-state: paused;
+}
+
+.people2:hover{
+    animation-play-state: running;
+}
+
+/* ANIMACIÓN FOTO CITAS TRABAJADORES*/
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(10px);
+    }
+
+    40%{
+        transform: translateY(-5px);
+    }
+    60%{
+        transform: translateY(5px);
+    }
+
+    80%{
+        transform: translateY(-5px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}

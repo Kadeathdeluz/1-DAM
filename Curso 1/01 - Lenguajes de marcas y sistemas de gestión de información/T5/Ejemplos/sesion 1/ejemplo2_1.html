@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Selectores de atributo (2). Selectores. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+
+
+
+p.p2 {
+color: blue;
+}
+
+
+p.p1 {
+color: red;
+}
+
+
+
+p[class="p1 p2"] {
+    text-transform: uppercase;
+}
+
+p[class="p2 p1"] {
+    border: 3px dashed forestgreen;
+}
+
+
+</style>
+</head>
+<body>
+<p class="p1">Esto es un párrafo &lt;p&gt; de clase p1.</p>
+<p class="p2">Esto es un párrafo &lt;p&gt; de clase p2.</p>
+<p class="p1 p2">Esto es un párrafo &lt;p&gt; con clase p1 y p2 (en ese orden).</p>
+<p class="p2 p1">Esto es un párrafo &lt;p&gt; con clase p2 y p1 (en ese orden).</p>
+</body>
+</html>
