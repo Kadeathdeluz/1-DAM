@@ -1,8 +1,9 @@
-# 1º  de DAM
+# Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma
 1er Curso de Desarrollo de Aplicaciones Multiplataforma en el CEEDCV
 
-
 El repositorio contiene la siguiente estructura de carpetas:
+
+# Curso 1: 
 
 01 - Lenguajes de marcas y sistemas de gestión de información
 
@@ -15,7 +16,5 @@ El repositorio contiene la siguiente estructura de carpetas:
 05 - Entornos de desarrollo
 
 06 - Formación y orientación laboral
-
-Cada una de las cuales contiene una asignatura de 1º de DAM.
 
 Autor: Roldán Sanchis Martínez.
